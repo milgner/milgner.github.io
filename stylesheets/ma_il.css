@@ -2,6 +2,10 @@
   font-size: 1.5em;
 }
 
+h1.entry-title {
+  font-size: 1.5em;
+}
+
 section.about img {
   float: left;
   margin-right: 5px;
