@@ -1,3 +1,7 @@
+#content .blog-index article h1 {
+  font-size: 1.5em;
+}
+
 section.about img {
   float: left;
   margin-right: 5px;
