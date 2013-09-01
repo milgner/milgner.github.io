@@ -1,10 +1,11 @@
-h1 {
-  font-size: 1.5em;
-}
-#content .blog-index article h1 {
-    font-size: 1.5em;
-}
 section.about img {
   float: left;
   margin-right: 5px;
+}
+
+footer img {
+  float: left;
+  vertical-align: middle;
+  margin-top: 7px;
+  margin-right: 10px;
 }

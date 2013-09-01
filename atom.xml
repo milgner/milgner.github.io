@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Extroverted Introspection]]></title>
-  <link href="http://marcusilgner.com/atom.xml" rel="self"/>
-  <link href="http://marcusilgner.com/"/>
-  <updated>2013-09-01T15:57:50+02:00</updated>
-  <id>http://marcusilgner.com/</id>
+  <link href="http://milgner.github.io/atom.xml" rel="self"/>
+  <link href="http://milgner.github.io/"/>
+  <updated>2013-09-01T16:47:54+02:00</updated>
+  <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
     <email><![CDATA[blog@marcusilgner.com]]></email>
@@ -14,9 +14,9 @@
   
   <entry>
     <title type="html"><![CDATA[Starting out - a mission statement]]></title>
-    <link href="http://marcusilgner.com/blog/2013/09/01/starting-out/"/>
+    <link href="http://milgner.github.io/blog/2013/09/01/starting-out/"/>
     <updated>2013-09-01T13:03:00+02:00</updated>
-    <id>http://marcusilgner.com/blog/2013/09/01/starting-out</id>
+    <id>http://milgner.github.io/blog/2013/09/01/starting-out</id>
     
       
 
@@ -30,7 +30,7 @@
 
 
 
-      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmarcusilgner.com%2Fblog%2F2013%2F09%2F01%2Fstarting-out%2F&amp;user_id=ma_il&amp;title=Starting+out+-+a+mission+statement&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=imho%2C%2Cmeta" type="text/html" />
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2013%2F09%2F01%2Fstarting-out%2F&amp;user_id=ma_il&amp;title=Starting+out+-+a+mission+statement&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=imho%2C%2Cmeta" type="text/html" />
     
     <content type="html"><![CDATA[<p>So, here I am. To be fair, this is already my third attempt at starting a blog.
 The first two tries were quite unsuccessful because I either got tripped up with

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: meta | Extroverted Introspection]]></title>
-  <link href="http://marcusilgner.com/blog/categories/meta/atom.xml" rel="self"/>
-  <link href="http://marcusilgner.com/"/>
-  <updated>2013-09-01T15:57:50+02:00</updated>
-  <id>http://marcusilgner.com/</id>
+  <link href="http://milgner.github.io/blog/categories/meta/atom.xml" rel="self"/>
+  <link href="http://milgner.github.io/"/>
+  <updated>2013-09-01T16:47:54+02:00</updated>
+  <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
     <email><![CDATA[blog@marcusilgner.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Starting out - a mission statement]]></title>
-    <link href="http://marcusilgner.com/blog/2013/09/01/starting-out/"/>
+    <link href="http://milgner.github.io/blog/2013/09/01/starting-out/"/>
     <updated>2013-09-01T13:03:00+02:00</updated>
-    <id>http://marcusilgner.com/blog/2013/09/01/starting-out</id>
+    <id>http://milgner.github.io/blog/2013/09/01/starting-out</id>
     <content type="html"><![CDATA[<p>So, here I am. To be fair, this is already my third attempt at starting a blog.
 The first two tries were quite unsuccessful because I either got tripped up with
 superficial issues like layout and typography or didn&rsquo;t have a clear idea about
