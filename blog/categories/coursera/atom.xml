@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coursera | Extroverted Introspection]]></title>
+  <link href="http://milgner.github.io/blog/categories/coursera/atom.xml" rel="self"/>
+  <link href="http://milgner.github.io/"/>
+  <updated>2013-09-05T01:03:49+02:00</updated>
+  <id>http://milgner.github.io/</id>
+  <author>
+    <name><![CDATA[Marcus Ilgner]]></name>
+    <email><![CDATA[blog@marcusilgner.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA["Think Again", Weeks 1+2]]></title>
+    <link href="http://milgner.github.io/blog/2013/09/05/think-again/"/>
+    <updated>2013-09-05T00:03:00+02:00</updated>
+    <id>http://milgner.github.io/blog/2013/09/05/think-again</id>
+    <content type="html"><![CDATA[<p>I started <a href="https://www.coursera.org/course/thinkagain">Think Again: How to Reason and Argue</a>
+with a mix of curiosity and genuine interest. In the past, I have often come across
+bad reasoning and although I learned to identify some items from the <a href="http://www.nizkor.org/features/fallacies/index.html">long list of fallacies</a>,
+I am not confident that I can formulate my own arguments in a well-structured way
+when in spontaneous situations.</p>
+
+<p>Also, I&rsquo;m currently reading <a href="http://www.amazon.de/Thinking-Fast-and-Slow-ebook/dp/B00555X8OA?tag=aflattrcom997-21">Thinking, Fast and Slow</a>
+and I felt like attending &ldquo;Think Again&rdquo; might work well in conjuction, even though
+they are about different subjects: the latter is about psychology in general while
+this course is about arguments and reasoning.</p>
+
+<p>However, after just finishing the video lectures and excercises for the second week,
+I&rsquo;m positively surprised by how well-made and entertaining it is.</p>
+
+<!-- more -->
+
+
+<p>As usual, the lectures in the first week were very basic: defining the subject of
+the course (&ldquo;What is an Argument?&rdquo;) and giving a bit of background information
+on what arguments are used for: justification and explanation.
+Personally I found the last part to be the most interesting: the differentiation
+between linguistic acts, speech acts and conversational acts.</p>
+
+<p>I&rsquo;m not sure how it will tie into the rest of the course but I certainly enjoyed
+the corresponding lectures. Especially the mention of <a href="https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo">Buffalo buffalo Buffalo</a>
+totally cracked me up. It&rsquo;s a great example how one can perform a linguistic act
+(i.e. stringing together a couple of words into a meaningful sentence) without
+it being conversational since it cannot actually be understood by the audience.
+This so far seems to be a recurring motive in the lectures: words and sentences
+can take on completely different meaning and function, depending on where and how
+they are used.</p>
+
+<p>Also, the introduction to the <a href="https://en.wikipedia.org/wiki/Cooperative_principle">Gricean maxims</a>
+was very interesting. Wikipedia cites some criticism of the concept but it is my
+personal conviction that, of course, communication should be intended to be
+constructive and cooperative, so following these maxims would be a good idea.</p>
+
+<p>Back to the course itself, the second week become more hands on. After introducing
+<a href="https://en.wikipedia.org/wiki/Logical_form">argument standard form</a>, a number of
+argument markers and elements were presented, followed by about 40 minutes of
+applying these using a newspaper article.
+What struck me as somewhat strange was the part about avoiding the <a href="https://en.wikipedia.org/wiki/Skeptical_regress">skeptical regress</a>.
+While it is obvious that one doesn&rsquo;t want to needlessly challenge every premise,
+I stumbled over the bit where the professor mentioned that assuring your audience
+using authority can be a good thing. Even or &ndash; due to <a href="https://en.wikipedia.org/wiki/Confirmation_bias">confirmation bias</a>
+and other psychological phenomena &ndash; <em>especially</em> someone very familiar with a given
+topic can be prone to erroneous judgement.
+So I missed some kind of interjection that, given evidence for doubt, one should
+always follow up on skeptical objections to premises. Just countering with a
+reference to authority cannot be the solution.</p>
+
+<p>Nevertheless, the course so far is highly entertaining and very interesting. It&rsquo;s
+still possible to join in, but in case you currently don&rsquo;t have the time or are
+still unsure, whether it&rsquo;s for you, make sure to follow the blog for updates in
+the coming weeks.</p>
+
+<p>At the moment, there are 126.000 students attending the course. Let&rsquo;s see how
+many will stay with it. For the moment, I definitely want to.</p>
+]]></content>
+  </entry>
+  
+</feed>
