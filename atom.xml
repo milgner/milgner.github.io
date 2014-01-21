@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2013-11-01T15:23:14+01:00</updated>
+  <updated>2014-01-21T22:05:11+01:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -11,6 +11,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A cheer for ignorance]]></title>
+    <link href="http://milgner.github.io/blog/2014/01/10/a-cheer-for-ignorance/"/>
+    <updated>2014-01-10T21:55:00+01:00</updated>
+    <id>http://milgner.github.io/blog/2014/01/10/a-cheer-for-ignorance</id>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F01%2F10%2Fa-cheer-for-ignorance%2F&amp;user_id=ma_il&amp;title=A+cheer+for+ignorance&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=" type="text/html" />
+    
+    <content type="html"><![CDATA[<h4>(A late New Years post)</h4>
+
+<p>Well, not really <strong>for</strong> ignorance, but for being able to recognize and admit to it. I was recently reminded of that fact after finishing <a href="https://class.coursera.org/humankind-001/">A Brief History Of Humankind</a> at Coursera. While explaining the evolution of our race, Dr. Harari often mentioned how many things in our lives are just intellectual constructs: countries, companies, religions and of course our financial and other social systems. After going through humankinds early history, When reaching modern times, he explains how admitting our ignorance and discovering science could lead to all the advances in the past few hundred years.</p>
+
+<p>Before, humanity was unable to grasp all the unknown unknowns all around them. Everyone believed in a god-given order and accepted how everything worked. Then some people decided they wanted to know why things work the way they do, create theories and verify hypotheses. But they could only do that by first admitting that they didn&rsquo;t know how things worked. And during the scientific process, one will always be wrong more often than one right.</p>
+
+<p>That is also applicable to everyday life. In recent years, I have grown more and more annoyed at how society shapes an inability to admit flaws and errors. The old saying <em>Errare Humanum Est</em><sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> seems to have disappeared from our collective minds along with its latin roots. Whether it is politicians or CEOs, to admit to past errors has become unconceivable; everyone wants to set themselves up as a larger-than-life icon, a photoshopped character on the frontpage of a magazine. And here is where we come to the second part of that formerly mentioned phrase: <em>perseverare autem diabolicum, et tertia non datur</em><sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>. If no one is able to admit their mistakes, they won&rsquo;t be rectified and nothing will improve.</p>
+
+<p>I just hope that instead of trying to loose a few pounds, in 2014 more people will start admitting to their flaws and facilitate the same for others by accepting theirs. Here&rsquo;s to making many mistakes and learning from them! Cheers!</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>To err is human<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>To continue (making the mistake) is of the devil, there is no third way<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[StoryMOOC and Star Wars]]></title>
