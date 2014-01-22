@@ -239,33 +239,44 @@ as the &hellip;
   GPG Key <code>0x2F71FB99</code>, Fingerprint:<code>AEEE AC81 5481 C57A A2A6<br />
 C3AD E31D 682E 2F71 FB99</code></p>
 </section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/01/10/a-cheer-for-ignorance/">A cheer for ignorance</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/28/storymooc-and-star-wars/">StoryMOOC and Star Wars</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/15/for-a-short-break-i-wish/">For a short break - I wish</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/05/think-again/">"Think Again", Weeks 1+2</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/01/starting-out/">Starting out - a mission statement</a>
-      </li>
-    
-  </ul>
-</section>
-
+  <style>
+    #customize-list{
+      float:left;
+      margin-left:0px;
+      list-style:none;
+    }
+    #gr_updates_widget{
+      float:left;
+      background-color:#fff;
+      padding:0px 0 20px 0px;
+      width:300px;
+      height:365px;
+    }
+    #gr_footer{
+      margin-bottom:0px;
+      height:30px;
+    }
+    #gr_updates_widget p{
+      padding:0px;
+      margin:0;
+      font-size:14px;
+    }
+    .gr_reviews_header {
+      display: none;
+    }
+    #gr_footer img{
+      display: none;
+      width:100px;
+      float:left;
+    }
+  </style>
+  <div id="gr_updates_widget">
+    <h4>My Goodreads updates</h4>
+    <iframe id="the_iframe" src="http://goodreads.com/widgets/user_update_widget?height=400&num_updates=3&user=24157935&width=300" width="298" height="330" frameborder="0"></iframe>
+          <div id="gr_footer">
+            <a href="https://www.goodreads.com/"><img alt="Goodreads: Book reviews, recommendations, and discussion" src="https://www.goodreads.com/images/layout/goodreads_logo_140.png" /></a>
+          </div>
+        </div>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
