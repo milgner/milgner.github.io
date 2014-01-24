@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coding | Extroverted Introspection]]></title>
+  <link href="http://milgner.github.io/blog/categories/coding/atom.xml" rel="self"/>
+  <link href="http://milgner.github.io/"/>
+  <updated>2014-01-24T22:38:09+01:00</updated>
+  <id>http://milgner.github.io/</id>
+  <author>
+    <name><![CDATA[Marcus Ilgner]]></name>
+    <email><![CDATA[blog@marcusilgner.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Friday Night Hack: Logitech K290 on Linux]]></title>
+    <link href="http://milgner.github.io/blog/2014/01/24/friday-night-hack-logitech-k290-on-linux/"/>
+    <updated>2014-01-24T22:06:00+01:00</updated>
+    <id>http://milgner.github.io/blog/2014/01/24/friday-night-hack-logitech-k290-on-linux</id>
+    <content type="html"><![CDATA[<p><strong>TL;DR</strong>: If you have a Logitech K290 and want your F-keys to work regularly on Linux,
+<a href="https://github.com/milgner/k290-fnkeyctl">you can now</a>.</p>
+
+<hr />
+
+<p>A few weeks ago I got myself a <a href="www.logitech.com/product/comfort-keyboard-k290">Logitech K290</a> keyboard for my home
+office. I really like how silent it is and the attack on the keys feels very nice, too. Also it is quite resistant
+to crumbs, which were somehow always squeezing through the gaps of my former Cherry XStream.</p>
+
+<p>But despite this, the keyboard has a major flaw: by default, the function keys work as a kind of &ldquo;multimedia&rdquo; keys
+instead of good ol' <code>F1</code> through <code>F12</code>. On Windows that can easily be remedied by installing the Logitech Setpoint
+software. But on Linux, where I do most of my hacking, it is a major PITA to always need to use the <code>Fn</code> modifier.</p>
+
+<p>At first, I thought I&rsquo;d just have to roll with it or begin <em>The Chase For A Comfortable Keyboard</em> anew but after
+accidentally shutting down my machine yesterday &ndash; when all I wanted to was to press F12, forgetting the modifier &ndash;,
+I was overcome by a sudden Nerd Rage: this device obviously needed some serious hacking.</p>
+
+<p>Equipped with cursory knowledge about the USB protocol and my usual can-do-attitude, I fired up the browser,
+looking for a way to snoop on the USB traffic. After two unsuccessful tries, I came across <a href="http://desowin.org/usbpcap/">USBPcap</a>,
+which can be used in conjunction with <a href="http://wireshark.org/">Wireshark</a> to do USB protocol analysis.</p>
+
+<p>After a few tries it became quickly apparent that toggling the checkbox in the Windows software would send one specific
+control packet to the device, so I decided to write a small tool to do exactly this on Linux.</p>
+
+<p>At first it did not work, because I used the simplified <code>libusb_open_device_with_vid_pid</code> function from libusb which
+has no proper error reporting. So I added proper device enumeration and found that the error was <code>LIBUSB_ERROR_ACCESS</code>.
+And behold: running it via <code>sudo</code> made everything work on the first try!</p>
+
+<p>So this concludes a wonderfully entertaining friday night. :D</p>
+]]></content>
+  </entry>
+  
+</feed>
