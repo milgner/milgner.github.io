@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-05-31T12:20:09+02:00</updated>
+  <updated>2014-06-04T23:58:25+02:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -11,6 +11,80 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Gitlab CI: Clashing Sidekiqs]]></title>
+    <link href="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/"/>
+    <updated>2014-06-04T23:42:00+02:00</updated>
+    <id>http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs</id>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F04%2Fgitlab-ci-clashing-sidekiqs%2F&amp;user_id=ma_il&amp;title=Gitlab+CI%3A+Clashing+Sidekiqs&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=continous%2Cgitlab%2Cintegration%2C" type="text/html" />
+    
+    <content type="html"><![CDATA[<p>For a few months now I have been wondering about occasional hickups in my
+<a href="https://www.gitlab.com/gitlab-ce/">Gitlab</a> setup. I run both Gitlab and
+<a href="https://www.gitlab.com/gitlab-ci/">Gitlab CI</a> on my server, along with a number
+of other Rails-based applications.</p>
+
+<p>Since I could mostly relate these to the creation of new repository, which is
+something I don&rsquo;t do that often, I didn&rsquo;t care that much about it.</p>
+
+<p>But then today it happened again and, having some time on my hands, I decided to
+finally investigate. As it turns out, it was a problem with both Gitlab and its
+CI using the (wonderful) <a href="http://sidekiq.org/">Sidekiq</a> gem for asynchronous job
+execution. And both instances tried to use the same <a href="http://redis.io">Redis</a>
+instance, getting hopelessly tangled in the process.</p>
+
+<p>Luckily, this kind of situation can be easily solved with a custom initializer.
+Just create a new file, <code>config/initializers/sidekiq.rb</code> in each project, with
+the following content:</p>
+
+<figure class='code'><figcaption><span>config/initializers/sidekiq.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sidekiq&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">redisConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="ss">namespace</span><span class="p">:</span> <span class="s1">&#39;Gitlab&#39;</span><span class="p">,</span> <span class="c1"># adapt name for each project</span>
+</span><span class='line'>  <span class="ss">url</span><span class="p">:</span> <span class="s1">&#39;redis://127.0.0.1:6379/1&#39;</span> <span class="c1"># replace &#39;1&#39; with a unique number</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_client</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_server</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Technically speaking, the namespace is not required but I think it&rsquo;s a good idea
+nonetheless.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[To New Horizons]]></title>

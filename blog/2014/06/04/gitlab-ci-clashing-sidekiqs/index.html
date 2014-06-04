@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>To New Horizons - Extroverted Introspection</title>
+  <title>Gitlab CI: Clashing Sidekiqs - Extroverted Introspection</title>
   <meta name="author" content="Marcus Ilgner">
 
   
-  <meta name="description" content="This week my employer, Bonn-based startup doo announced that
-they must discontinue the development of our planned product and had to let go
-of all &hellip;">
+  <meta name="description" content="For a few months now I have been wondering about occasional hickups in my
+Gitlab setup. I run both Gitlab and
+Gitlab CI on my server, along with a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ of all &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://milgner.github.io/blog/2014/05/31/to-new-horizons/">
+  <link rel="canonical" href="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -58,7 +58,7 @@ of all &hellip;">
 
 
 
-<link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F05%2F31%2Fto-new-horizons%2F&amp;user_id=ma_il&amp;title=To+New+Horizons&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=" type="text/html" />
+<link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F04%2Fgitlab-ci-clashing-sidekiqs%2F&amp;user_id=ma_il&amp;title=Gitlab+CI%3A+Clashing+Sidekiqs&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=continous%2Cgitlab%2Cintegration%2C" type="text/html" />
 
   
 
@@ -101,7 +101,7 @@ of all &hellip;">
   
   <header>
     
-      <h1 class="entry-title">To New Horizons</h1>
+      <h1 class="entry-title">Gitlab CI: Clashing Sidekiqs</h1>
     
     
       <p class="meta">
@@ -117,51 +117,64 @@ of all &hellip;">
   
 
 
-<time datetime="2014-05-31T11:31:00+02:00" pubdate data-updated="true">May 31<span>st</span>, 2014</time>
+<time datetime="2014-06-04T23:42:00+02:00" pubdate data-updated="true">Jun 4<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>This week my employer, Bonn-based <a href="http://doo.net">startup doo</a> announced that
-they must discontinue the development of our planned product and had to let go
-of all associated teams.</p>
+<div class="entry-content"><p>For a few months now I have been wondering about occasional hickups in my
+<a href="https://www.gitlab.com/gitlab-ce/">Gitlab</a> setup. I run both Gitlab and
+<a href="https://www.gitlab.com/gitlab-ci/">Gitlab CI</a> on my server, along with a number
+of other Rails-based applications.</p>
 
-<p>Given the dynamics of the IT startup world, it wasn&rsquo;t that much of a shock.
-There are different numbers for success rates out there but even the best ones
-don&rsquo;t exceed 30% probability.</p>
+<p>Since I could mostly relate these to the creation of new repository, which is
+something I don&rsquo;t do that often, I didn&rsquo;t care that much about it.</p>
 
-<p>What surprised me much more was that apparently there is not enough demand in
-the market for the product we were trying to build: an end-to-end encrypted,
-distributed file storage and collaboration tool.
-At the point of writing, there is only one competitor that I do consider to be
-on-par with my expectations of security/cryptography: <a href="https://tresorit.com/">Tresorit</a>.
-But even they, although they have a product with very high security standards
-and a good (though not outstanding) user experience, don&rsquo;t seem to be able to
-get the required traction. People don&rsquo;t seem to care about their data.</p>
+<p>But then today it happened again and, having some time on my hands, I decided to
+finally investigate. As it turns out, it was a problem with both Gitlab and its
+CI using the (wonderful) <a href="http://sidekiq.org/">Sidekiq</a> gem for asynchronous job
+execution. And both instances tried to use the same <a href="http://redis.io">Redis</a>
+instance, getting hopelessly tangled in the process.</p>
 
-<p>One year after Edward Snowden publicized the massive intrusions of the <a href="https://en.wikipedia.org/wiki/Five_Eyes">Five Eyes</a>
-states into our personal lives &ndash; and also their close cooperation with other
-intelligence services like the german <a href="http://en.wikipedia.org/wiki/Bundesnachrichtendienst">Bundesnachrichtendienst</a> &ndash;
-everything is the same as it was before. True, a few nerds may have cancelled
-their Facebook account or installed GPG, but still we have been unable to
-communicate the situation to the vast majority of the population.
-So: more crypto, please. We need better IT products.</p>
+<p>Luckily, this kind of situation can be easily solved with a custom initializer.
+Just create a new file, <code>config/initializers/sidekiq.rb</code> in each project, with
+the following content:</p>
 
-<p>Having said that, I&rsquo;m now free to look for new challenges and opportunities on
-which to hack on. Luckily, skilled developers are in high demand and my broad
-range of experiences makes me versatile enough that it shouldn&rsquo;t be a problem to
-find interesting projects, so I&rsquo;m much more excited about what&rsquo;s to come than
-worried about unemployment. <i class='emoji wink'></i></p>
+<figure class='code'><figcaption><span>config/initializers/sidekiq.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sidekiq&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">redisConfig</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="ss">namespace</span><span class="p">:</span> <span class="s1">&#39;Gitlab&#39;</span><span class="p">,</span> <span class="c1"># adapt name for each project</span>
+</span><span class='line'>  <span class="ss">url</span><span class="p">:</span> <span class="s1">&#39;redis://127.0.0.1:6379/1&#39;</span> <span class="c1"># replace &#39;1&#39; with a unique number</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_client</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_server</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>During the coming month, besides writing job applications, I hope to work on
-some open source software projects, make a lot of music and also find time and
-inspiration for some more blogging.
-One thing I&rsquo;ve been contemplating was to write a series of posts entitled &ldquo;The
-Big Continuous Integration Shootout&rdquo; wherein I present a number of CI systems,
-their strengths and weaknesses and where they are best employed. If you have any
-comments on that, please <a href="mailto:mail@marcusilgner.com">drop me a line</a>!</p>
+
+<p>Technically speaking, the namespace is not required but I think it&rsquo;s a good idea
+nonetheless.</p>
 </div>
 
 
@@ -184,36 +197,41 @@ comments on that, please <a href="mailto:mail@marcusilgner.com">drop me a line</
   
 
 
-<time datetime="2014-05-31T11:31:00+02:00" pubdate data-updated="true">May 31<span>st</span>, 2014</time>
+<time datetime="2014-06-04T23:42:00+02:00" pubdate data-updated="true">Jun 4<span>th</span>, 2014</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/continous/'>continous</a>, <a class='category' href='/blog/categories/gitlab/'>gitlab</a>, <a class='category' href='/blog/categories/integration/'>integration,</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://milgner.github.io/blog/2014/05/31/to-new-horizons/" data-via="ma_il" data-counturl="http://milgner.github.io/blog/2014/05/31/to-new-horizons/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/" data-via="ma_il" data-counturl="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/" >Tweet</a>
   
   
   
   
     <a class="FlattrButton" style="display:none;"
-    title="To New Horizons"
+    title="Gitlab CI: Clashing Sidekiqs"
     data-flattr-uid="ma_il"
-    data-flattr-tags=""
+    data-flattr-tags="continous,gitlab,integration,"
     data-flattr-button="compact"
     data-flattr-category="text"
-    href="http://milgner.github.io/blog/2014/05/31/to-new-horizons/">
-    This week my employer, Bonn-based [startup doo](http://doo.net) announced that
-they must discontinue the development of our planned product and had to let go
-of all associated teams.
+    href="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/">
+    For a few months now I have been wondering about occasional hickups in my 
+[Gitlab](https://www.gitlab.com/gitlab-ce/) setup. I run both Gitlab and 
+[Gitlab CI](https://www.gitlab.com/gitlab-ci/) on my server, along with a number
+of other Rails-based applications.
 
-Given the dynamics of the IT startup world, it wasn't that much of a shock.
-There are different numbers for success rates out there but even the best ones
-don't exceed 30% probability.
+Since I could mostly relate these to the creation of new repository, which is
+something I don't do that often, I didn't care that much about it.
 
-What surprised me much more was that apparently there is not enough demand in
-the market for the product we were trying to build &hellip;
+But then today it happened again and, having some time on my hands, I decided to &hellip;
 </a>
 
   
@@ -222,10 +240,8 @@ the market for the product we were trying to build &hellip;
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/03/02/numenera-a-random-focus/" title="Previous Post: Numenera: a random focus">&laquo; Numenera: a random focus</a>
+        <a class="basic-alignment left" href="/blog/2014/05/31/to-new-horizons/" title="Previous Post: To New Horizons">&laquo; To New Horizons</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/" title="Next Post: Gitlab CI: Clashing Sidekiqs">Gitlab CI: Clashing Sidekiqs &raquo;</a>
       
     </p>
   </footer>
