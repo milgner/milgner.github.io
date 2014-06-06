@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Gitlab CI: Clashing Sidekiqs - Extroverted Introspection</title>
+  <title>Category: Ember.js, - Extroverted Introspection</title>
   <meta name="author" content="Marcus Ilgner">
 
   
-  <meta name="description" content="For a few months now I have been wondering about occasional hickups in my
-Gitlab setup. I run both Gitlab and
-Gitlab CI on my server, along with a &hellip;">
+  <meta name="description" content="Category: Ember.js,">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ Gitlab CI on my server, along with a &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/">
+  <link rel="canonical" href="http://milgner.github.ioblog/categories/ember-dot-js/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -58,7 +56,7 @@ Gitlab CI on my server, along with a &hellip;">
 
 
 
-<link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F04%2Fgitlab-ci-clashing-sidekiqs%2F&amp;user_id=ma_il&amp;title=Gitlab+CI%3A+Clashing+Sidekiqs&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=continous%2Cgitlab%2Cintegration%2C" type="text/html" />
+<link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.ioblog%2Fcategories%2Fember-dot-js%2Findex.html&amp;user_id=ma_il&amp;title=Category%3A+Ember.js%2C&amp;category=text&amp;description=Category%3A+Ember.js%2C&amp;tags=" type="text/html" />
 
   
 
@@ -97,156 +95,35 @@ Gitlab CI on my server, along with a &hellip;">
     <div id="main">
       <div id="content">
         <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Gitlab CI: Clashing Sidekiqs</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-04T23:42:00+02:00" pubdate data-updated="true">Jun 4<span>th</span>, 2014</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Ember.js,</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>For a few months now I have been wondering about occasional hickups in my
-<a href="https://www.gitlab.com/gitlab-ce/">Gitlab</a> setup. I run both Gitlab and
-<a href="https://www.gitlab.com/gitlab-ci/">Gitlab CI</a> on my server, along with a number
-of other Rails-based applications.</p>
 
-<p>Since I could mostly relate these to the creation of new repository, which is
-something I don&rsquo;t do that often, I didn&rsquo;t care that much about it.</p>
+  
+  <h2>2014</h2>
 
-<p>But then today it happened again and, having some time on my hands, I decided to
-finally investigate. As it turns out, it was a problem with both Gitlab and its
-CI using the (wonderful) <a href="http://sidekiq.org/">Sidekiq</a> gem for asynchronous job
-execution. And both instances tried to use the same <a href="http://redis.io">Redis</a>
-instance, getting hopelessly tangled in the process.</p>
+<article>
+  
+<h1><a href="/blog/2014/06/06/ember-data-nested-resources/">Ember Data: nested resources</a></h1>
+<time datetime="2014-06-06T20:19:00+02:00" pubdate><span class='month'>Jun</span> <span class='day'>06</span> <span class='year'>2014</span></time>
 
-<p>Luckily, this kind of situation can be easily solved with a custom initializer.
-Just create a new file, <code>config/initializers/sidekiq.rb</code> in each project, with
-the following content:</p>
-
-<figure class='code'><figcaption><span>config/initializers/sidekiq.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;sidekiq&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">redisConfig</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="ss">namespace</span><span class="p">:</span> <span class="s1">&#39;Gitlab&#39;</span><span class="p">,</span> <span class="c1"># adapt name for each project</span>
-</span><span class='line'>  <span class="ss">url</span><span class="p">:</span> <span class="s1">&#39;redis://127.0.0.1:6379/1&#39;</span> <span class="c1"># replace &#39;1&#39; with a unique number</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_client</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="no">Sidekiq</span><span class="o">.</span><span class="n">configure_server</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">config</span><span class="o">.</span><span class="n">redis</span> <span class="o">=</span> <span class="n">redisConfig</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/ember-dot-js/'>Ember.js,</a>, <a class='category' href='/blog/categories/development/'>development</a></span>
+</footer>
 
 
-<p>Technically speaking, the namespace is not required but I think it&rsquo;s a good idea
-nonetheless.</p>
+</article>
+
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Marcus Ilgner</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-04T23:42:00+02:00" pubdate data-updated="true">Jun 4<span>th</span>, 2014</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/continous/'>continous</a>, <a class='category' href='/blog/categories/gitlab/'>gitlab</a>, <a class='category' href='/blog/categories/integration/'>integration,</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/" data-via="ma_il" data-counturl="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/" >Tweet</a>
-  
-  
-  
-  
-    <a class="FlattrButton" style="display:none;"
-    title="Gitlab CI: Clashing Sidekiqs"
-    data-flattr-uid="ma_il"
-    data-flattr-tags="continous,gitlab,integration,"
-    data-flattr-button="compact"
-    data-flattr-category="text"
-    href="http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/">
-    For a few months now I have been wondering about occasional hickups in my 
-[Gitlab](https://www.gitlab.com/gitlab-ce/) setup. I run both Gitlab and 
-[Gitlab CI](https://www.gitlab.com/gitlab-ci/) on my server, along with a number
-of other Rails-based applications.
-
-Since I could mostly relate these to the creation of new repository, which is
-something I don't do that often, I didn't care that much about it.
-
-But then today it happened again and, having some time on my hands, I decided to &hellip;
-</a>
-
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2014/05/31/to-new-horizons/" title="Previous Post: To New Horizons">&laquo; To New Horizons</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2014/06/06/ember-data-nested-resources/" title="Next Post: Ember Data: nested resources">Ember Data: nested resources &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

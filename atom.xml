@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-06-04T23:58:25+02:00</updated>
+  <updated>2014-06-06T21:37:24+02:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -11,6 +11,128 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ember Data: nested resources]]></title>
+    <link href="http://milgner.github.io/blog/2014/06/06/ember-data-nested-resources/"/>
+    <updated>2014-06-06T20:19:00+02:00</updated>
+    <id>http://milgner.github.io/blog/2014/06/06/ember-data-nested-resources</id>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F06%2Fember-data-nested-resources%2F&amp;user_id=ma_il&amp;title=Ember+Data%3A+nested+resources&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=Ember.js%2C%2Cdevelopment" type="text/html" />
+    
+    <content type="html"><![CDATA[<p>As anyone who has worked with <a href="http://emberjs.com">Ember.js</a> before can tell
+you, its learning curve is as steep as the framework is awesome. And its awesome
+indeed.
+That is why I want to share my insights from this afternoon to provide some
+instructions on how to use Ember Data with nested resources.</p>
+
+<!-- more -->
+
+
+<p>For this example, I will use the ubiquitous <em>Blog</em> application where each <em>Post</em>
+<em>has many</em> <em>Comments</em>. As such, the URLs provided by the REST interface will
+look like this:</p>
+
+<ul>
+<li><code>/posts</code> provides all posts</li>
+<li><code>/posts/:id(.:format)</code> provides access to a single post</li>
+<li><code>/posts/:id/comments</code> returns all the comments</li>
+<li><code>/posts/:id/comments/:id</code> shows only the data for a specific comment</li>
+</ul>
+
+
+<p>The Ember model will probably look familiar to you, but I&rsquo;ll include it here
+for the sake of completeness:</p>
+
+<figure class='code'><figcaption><span>model.coffee</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='coffeescript'><span class='line'><span class="nv">App.Post = </span><span class="nx">DS</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span>
+</span><span class='line'>  <span class="nv">title: </span><span class="nx">DS</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1"># ...some more attributes here...</span>
+</span><span class='line'>  <span class="nv">comments: </span><span class="nx">DS</span><span class="p">.</span><span class="nx">hasMany</span><span class="p">(</span><span class="s">&#39;comment&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nv">async: </span><span class="kc">true</span> <span class="p">})</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">App.Comment = </span><span class="nx">DS</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span>
+</span><span class='line'>  <span class="nv">title: </span><span class="nx">DS</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s">&#39;string&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1"># ...some more attributes here...</span>
+</span><span class='line'>  <span class="nv">post: </span><span class="nx">DS</span><span class="p">.</span><span class="nx">belongsTo</span><span class="p">(</span><span class="s">&#39;post&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nv">async: </span><span class="kc">true</span> <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Right now, without any further configuration, Ember Data would try to access
+comments via the URLs <code>/comments</code> or <code>/comments/:id</code>. So how do we tell it to
+use the nested URLs instead?</p>
+
+<p>The answer is surprisingly simple and hidden in the <a href="http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_findHasMany"><code>findHasMany</code></a>
+documentation of the <code>RESTAdapter</code> class.</p>
+
+<p>Effectively, all you need to do is to provide a <code>links</code> attribute in your JSON
+which contains a map of associated model attributes and their corresponding REST
+URL.
+In our case it happens to look exactly like the one from the Ember documentation:</p>
+
+<figure class='code'><figcaption><span>GET</span><a href='http://milgner.github.io/posts/1.json'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="nt">&quot;post&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span><span class='line'>    <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Rails is omakase&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nt">&quot;links&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&quot;comments&quot;</span><span class="p">:</span> <span class="s2">&quot;/posts/1/comments&quot;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As a bonus, here&rsquo;s some sample template code for a <a href="https://github.com/rails/jbuilder">Jbuilder</a>-based
+application:</p>
+
+<figure class='code'><figcaption><span>_post.json.jbuilder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">id</span> <span class="n">post</span><span class="o">.</span><span class="n">id</span>
+</span><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">title</span> <span class="n">post</span><span class="o">.</span><span class="n">title</span>
+</span><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">links</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">json</span><span class="o">.</span><span class="n">comments</span> <span class="s2">&quot;/posts/</span><span class="si">#{</span><span class="n">post</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/comments&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>show.json.jbuilder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">partial!</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="ss">as</span><span class="p">:</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">post</span><span class="p">:</span> <span class="vi">@post</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<figure class='code'><figcaption><span>index.json.jbuilder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">posts</span> <span class="vi">@posts</span><span class="p">,</span> <span class="ss">partial</span><span class="p">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="ss">as</span><span class="p">:</span> <span class="ss">:post</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Gitlab CI: Clashing Sidekiqs]]></title>

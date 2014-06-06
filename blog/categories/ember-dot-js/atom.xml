@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ember.js, | Extroverted Introspection]]></title>
+  <link href="http://milgner.github.io/blog/categories/ember-dot-js/atom.xml" rel="self"/>
+  <link href="http://milgner.github.io/"/>
+  <updated>2014-06-06T21:37:24+02:00</updated>
+  <id>http://milgner.github.io/</id>
+  <author>
+    <name><![CDATA[Marcus Ilgner]]></name>
+    <email><![CDATA[blog@marcusilgner.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ember Data: nested resources]]></title>
+    <link href="http://milgner.github.io/blog/2014/06/06/ember-data-nested-resources/"/>
+    <updated>2014-06-06T20:19:00+02:00</updated>
+    <id>http://milgner.github.io/blog/2014/06/06/ember-data-nested-resources</id>
+    <content type="html"><![CDATA[<p>As anyone who has worked with <a href="http://emberjs.com">Ember.js</a> before can tell
+you, its learning curve is as steep as the framework is awesome. And its awesome
+indeed.
+That is why I want to share my insights from this afternoon to provide some
+instructions on how to use Ember Data with nested resources.</p>
+
+<!-- more -->
+
+
+<p>For this example, I will use the ubiquitous <em>Blog</em> application where each <em>Post</em>
+<em>has many</em> <em>Comments</em>. As such, the URLs provided by the REST interface will
+look like this:</p>
+
+<ul>
+<li><code>/posts</code> provides all posts</li>
+<li><code>/posts/:id(.:format)</code> provides access to a single post</li>
+<li><code>/posts/:id/comments</code> returns all the comments</li>
+<li><code>/posts/:id/comments/:id</code> shows only the data for a specific comment</li>
+</ul>
+
+
+<p>The Ember model will probably look familiar to you, but I&rsquo;ll include it here
+for the sake of completeness:</p>
+
+<p>``` coffeescript model.coffee
+App.Post = DS.Model.extend
+  title: DS.attr(&lsquo;string&rsquo;)
+  # &hellip;some more attributes here&hellip;
+  comments: DS.hasMany(&lsquo;comment&rsquo;, { async: true })</p>
+
+<p>App.Comment = DS.Model.extend
+  title: DS.attr(&lsquo;string&rsquo;)
+  # &hellip;some more attributes here&hellip;
+  post: DS.belongsTo(&lsquo;post&rsquo;, { async: true })
+```</p>
+
+<p>Right now, without any further configuration, Ember Data would try to access
+comments via the URLs <code>/comments</code> or <code>/comments/:id</code>. So how do we tell it to
+use the nested URLs instead?</p>
+
+<p>The answer is surprisingly simple and hidden in the <a href="http://emberjs.com/api/data/classes/DS.RESTAdapter.html#method_findHasMany"><code>findHasMany</code></a>
+documentation of the <code>RESTAdapter</code> class.</p>
+
+<p>Effectively, all you need to do is to provide a <code>links</code> attribute in your JSON
+which contains a map of associated model attributes and their corresponding REST
+URL.
+In our case it happens to look exactly like the one from the Ember documentation:</p>
+
+<p>``` json GET /posts/1.json
+{
+  &ldquo;post&rdquo;: {</p>
+
+<pre><code>"id": 1,
+"title": "Rails is omakase",
+"links": { "comments": "/posts/1/comments" }
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>As a bonus, here&rsquo;s some sample template code for a <a href="https://github.com/rails/jbuilder">Jbuilder</a>-based
+application:
+<code>ruby _post.json.jbuilder
+json.id post.id
+json.title post.title
+json.links do
+  json.comments "/posts/#{post.id}/comments"
+end
+</code>
+<code>ruby show.json.jbuilder
+json.partial! 'post', as: :post, post: @post
+</code>
+<code>ruby index.json.jbuilder
+json.posts @posts, partial: 'post', as: :post
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
