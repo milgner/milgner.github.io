@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ember.js, | Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/blog/categories/ember-dot-js/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-06-06T21:37:24+02:00</updated>
+  <updated>2014-06-07T10:07:26+02:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -89,7 +89,9 @@ json.links do
 end
 </code>
 <code>ruby show.json.jbuilder
-json.partial! 'post', as: :post, post: @post
+json.post do
+  json.partial! 'post', post: @post
+end
 </code>
 <code>ruby index.json.jbuilder
 json.posts @posts, partial: 'post', as: :post

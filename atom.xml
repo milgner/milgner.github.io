@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-06-06T21:37:24+02:00</updated>
+  <updated>2014-06-07T10:07:26+02:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -123,7 +123,11 @@ application:</p>
 
 
 <figure class='code'><figcaption><span>show.json.jbuilder</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">partial!</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="ss">as</span><span class="p">:</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">post</span><span class="p">:</span> <span class="vi">@post</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">json</span><span class="o">.</span><span class="n">post</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">json</span><span class="o">.</span><span class="n">partial!</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span> <span class="ss">post</span><span class="p">:</span> <span class="vi">@post</span>
+</span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
