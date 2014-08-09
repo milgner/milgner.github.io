@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-06-07T10:07:26+02:00</updated>
+  <updated>2014-08-09T22:12:22+02:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -11,6 +11,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Reporting in Rails]]></title>
+    <link href="http://milgner.github.io/blog/2014/08/09/reporting-in-rails/"/>
+    <updated>2014-08-09T21:25:00+02:00</updated>
+    <id>http://milgner.github.io/blog/2014/08/09/reporting-in-rails</id>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F08%2F09%2Freporting-in-rails%2F&amp;user_id=ma_il&amp;title=Reporting+in+Rails&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=" type="text/html" />
+    
+    <content type="html"><![CDATA[<p>Some time has passed after my last post and despite my solemn vow to blog more,
+that didn&rsquo;t happen. That&rsquo;s because I&rsquo;ve been a busy bee and, again, too
+preoccupied with other stuff to write anything meaningful.
+The search for a new interesting job was &ndash; luckily &ndash; very short and left me in
+the company of the great guys at <a href="http://evopark.de">evopark</a>. There I&rsquo;m now
+responsible for the architecture, implementation and related sys-ops of their
+IT infrastructure. It&rsquo;s loads of fun and I can finally work with Ruby On Rails
+full-time again.</p>
+
+<p>And if there&rsquo;s one thing to take away from the last couple of weeks, it&rsquo;s that
+the development process with Rails has become even more awesome since its
+initial inception.<br/>
+The surrounding ecosystem is huge, there are loads of stable, well-tested and
+documented gems to quickly develop complex, yet maintainable applications.</p>
+
+<p>But there&rsquo;s one subject that&rsquo;s still&hellip; suboptimal: creating PDF reports.
+There are a couple of approaches that can roughly be divided into two categories:
+<a href="http://wkhtmltopdf.org/">wkhtmltopdf</a> and <a href="https://github.com/prawnpdf/prawn">Prawn</a>.
+Yet, when compared to mature reporting solutions from the Java world, like
+<a href="http://www.eclipse.org/birt/about/">BIRT</a> and <a href="http://community.jaspersoft.com/project/jasperreports-library">JasperReports</a>
+they all seem woefully inadequate.</p>
+
+<!-- more -->
+
+
+<p>What I want in a reporting engine is:</p>
+
+<ul>
+<li>Report-designer GUI so that non-developers can design and adapt reports</li>
+<li>Control over page breaks (not that easy when going via HTML)</li>
+<li>High-quality PDF output with font-embedding and optional PDF/A support</li>
+</ul>
+
+
+<p>So my solution was to create a micro-service based on <a href="http://www.javaxt.com/javaxt-server/Overview">JavaXT HTTP Server</a> and the JasperReports library.
+The Rails application creates a JSON representation of the report data and sends
+a HTTP request to the Report Server. The report server then generates the PDF,
+optionally overlaying it onto onto another letterhead PDF and making sure that
+it&rsquo;s PDF/A compatible in a few lines of code using the fabulous <a href="http://itextpdf.com/product/itext">iText</a>
+library.
+And everything in less than 650 lines of code (plus a couple of integration tests).</p>
+
+<p>So, it turned out that reporting in Rails is still best done in Java.
+Not that optimal but I&rsquo;m sure we&rsquo;ll get there eventually.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ember Data: nested resources]]></title>
