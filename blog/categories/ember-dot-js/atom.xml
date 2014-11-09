@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ember.js, | Extroverted Introspection]]></title>
+  <title><![CDATA[Category: ember.js, | Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/blog/categories/ember-dot-js/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-09-02T22:21:50+02:00</updated>
+  <updated>2014-11-09T13:35:59+01:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -42,17 +42,16 @@ look like this:</p>
 <p>The Ember model will probably look familiar to you, but I&rsquo;ll include it here
 for the sake of completeness:</p>
 
-<p>``` coffeescript model.coffee
-App.Post = DS.Model.extend
-  title: DS.attr(&lsquo;string&rsquo;)
-  # &hellip;some more attributes here&hellip;
-  comments: DS.hasMany(&lsquo;comment&rsquo;, { async: true })</p>
+<pre><code class="coffeescript model.coffee">App.Post = DS.Model.extend
+  title: DS.attr('string')
+  # ...some more attributes here...
+  comments: DS.hasMany('comment', { async: true })
 
-<p>App.Comment = DS.Model.extend
-  title: DS.attr(&lsquo;string&rsquo;)
-  # &hellip;some more attributes here&hellip;
-  post: DS.belongsTo(&lsquo;post&rsquo;, { async: true })
-```</p>
+App.Comment = DS.Model.extend
+  title: DS.attr('string')
+  # ...some more attributes here...
+  post: DS.belongsTo('post', { async: true })
+</code></pre>
 
 <p>Right now, without any further configuration, Ember Data would try to access
 comments via the URLs <code>/comments</code> or <code>/comments/:id</code>. So how do we tell it to
@@ -66,18 +65,14 @@ which contains a map of associated model attributes and their corresponding REST
 URL.
 In our case it happens to look exactly like the one from the Ember documentation:</p>
 
-<p>``` json GET /posts/1.json
-{
-  &ldquo;post&rdquo;: {</p>
-
-<pre><code>"id": 1,
-"title": "Rails is omakase",
-"links": { "comments": "/posts/1/comments" }
-</code></pre>
-
-<p>  }
+<pre><code class="json GET /posts/1.json">{
+  "post": {
+    "id": 1,
+    "title": "Rails is omakase",
+    "links": { "comments": "/posts/1/comments" }
+  }
 }
-```</p>
+</code></pre>
 
 <p>As a bonus, here&rsquo;s some sample template code for a <a href="https://github.com/rails/jbuilder">Jbuilder</a>-based
 application:

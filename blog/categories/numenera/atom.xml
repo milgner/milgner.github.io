@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Numenera, | Extroverted Introspection]]></title>
+  <title><![CDATA[Category: numenera, | Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/blog/categories/numenera/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-09-02T22:21:50+02:00</updated>
+  <updated>2014-11-09T13:35:59+01:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -99,7 +99,7 @@ by 10%. Action.</p>
 <blockquote><p>Note: The initial chance can be really small but it must be plausible. It&rsquo;s not
 realistic that suddenly a piano will fall on an opponent from the sky. But that
 doesn&rsquo;t mean that some of the artifacts he&rsquo;s carrying won&rsquo;t suddenly go haywire
-or that his sword &ndash; despite being forged my a master craftsman &ndash; breaks.</p></blockquote>
+or that his sword - despite being forged my a master craftsman - breaks.</p></blockquote>
 ]]></content>
   </entry>
   

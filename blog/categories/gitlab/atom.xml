@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gitlab | Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/blog/categories/gitlab/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-09-02T22:21:50+02:00</updated>
+  <updated>2014-11-09T13:35:59+01:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -36,22 +36,21 @@ instance, getting hopelessly tangled in the process.</p>
 Just create a new file, <code>config/initializers/sidekiq.rb</code> in each project, with
 the following content:</p>
 
-<p>``` ruby config/initializers/sidekiq.rb
-require &lsquo;sidekiq&rsquo;</p>
+<pre><code class="ruby config/initializers/sidekiq.rb">require 'sidekiq'
 
-<p>redisConfig = {
-  namespace: &lsquo;Gitlab&rsquo;, # adapt name for each project
-  url: &lsquo;redis://127.0.0.1:6379/1&rsquo; # replace &lsquo;1&rsquo; with a unique number
-}</p>
+redisConfig = { 
+  namespace: 'Gitlab', # adapt name for each project
+  url: 'redis://127.0.0.1:6379/1' # replace '1' with a unique number
+}
 
-<p>Sidekiq.configure_client do |config|
-  config.redis = redisConfig
-end</p>
-
-<p>Sidekiq.configure_server do |config|
+Sidekiq.configure_client do |config|
   config.redis = redisConfig
 end
-```</p>
+
+Sidekiq.configure_server do |config|
+  config.redis = redisConfig
+end
+</code></pre>
 
 <p>Technically speaking, the namespace is not required but I think it&rsquo;s a good idea
 nonetheless.</p>

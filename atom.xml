@@ -3,7 +3,7 @@
   <title><![CDATA[Extroverted Introspection]]></title>
   <link href="http://milgner.github.io/atom.xml" rel="self"/>
   <link href="http://milgner.github.io/"/>
-  <updated>2014-09-02T22:21:50+02:00</updated>
+  <updated>2014-11-09T13:35:59+01:00</updated>
   <id>http://milgner.github.io/</id>
   <author>
     <name><![CDATA[Marcus Ilgner]]></name>
@@ -11,6 +11,112 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[On mobile app development]]></title>
+    <link href="http://milgner.github.io/blog/2014/11/09/on-mobile-app-development/"/>
+    <updated>2014-11-09T12:27:19+01:00</updated>
+    <id>http://milgner.github.io/blog/2014/11/09/on-mobile-app-development</id>
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F11%2F09%2Fon-mobile-app-development%2F&amp;user_id=ma_il&amp;title=On+mobile+app+development&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=coding%2Ctitanium" type="text/html" />
+    
+    <content type="html"><![CDATA[<p>Mobile app development is a mess. Sure, it&rsquo;s getting better but it still has
+a long way to go catch up with the development process on the desktop or
+even backend technologies.</p>
+
+<p>Last year, german software company SAP <a href="http://blogs.sap.com/innovation/mobile-applications/much-cost-build-app-01241656">cited</a>
+that the development costs for a mobile app covering more than one platform
+starts at $50.000 and other figures I&rsquo;ve seen concur with that estimate.
+Considering that this covers only the initial development, a lot of small and
+medium-sized business will think twice about developing their app and again
+think doubly on how to keep costs small.
+Back at <a href="http://doo.net">doo</a> we had mobile development teams for each
+platform, writing native code for each and even adapting workflows to suit
+the habits and expectations of users of the respective mobile OS.</p>
+
+<p>But not many teams will be able to afford so much manpower, and so, with a
+tight budget and time schedule for our <a href="http://www.evopark.de">evopark</a>
+app, I looked at and evaluated a lot of mobile development frameworks in the
+past weeks.</p>
+
+<!-- more -->
+
+
+<p>Currently the main players (in no particular order) are:</p>
+
+<ul>
+<li><p><a href="http://cordova.apache.org/">Apache Cordova</a> - also known as PhoneGap -
+and its descendants like <a href="http://ionicframework.com/">Ionic</a>.
+It mainly uses a web view container to render HTML, CSS and mostly runs
+JavaScript but added support for native components in recent releases.</p></li>
+<li><p><a href="http://appcelerator.com/">Appcelerator Titanium</a> also uses JavaScript
+but added a script-to-native bridge that creates native UI controls to
+create a smoother user experience.</p></li>
+<li><p><a href="http://xamarin.com/">Xamarin</a> is even more focussed on the &lsquo;native&rsquo; aspect
+to improve the user experience. Their per-developer-per-platform price tag
+was somewhat off-putting for us but I&rsquo;ve heard a lot of good things from
+other developers who use it.</p></li>
+<li><p><a href="http://www.appmethod.com/">AppMethod</a> also has a price tag that was outside
+our budget but it also looked like an interesting approach. Even if I&rsquo;m
+not certain that a C++ codebase - as appealing as some aspects of it are -
+is contemporary standard.</p></li>
+<li><p><a href="http://qt-project.org/">Qt</a> is one of the oldest cross-platform UI
+frameworks on the desktop and is working on expanding into the mobile market.
+They&rsquo;re currently restructuring the project to provide better accessibility
+to new developers.
+After hours of cursing while trying - ultimately without success - to build
+the native map module for my Android phone, I decided to wait for that
+initiative to progress somewhat further.</p></li>
+</ul>
+
+
+<p>At evopark, being vary of the sluggishness that some HTML-based apps exhibit,
+we decided to use Titanium. Now, with a few weeks of development under our
+belt, I&rsquo;m still uncertain whether it was the best choice. Certainly, the code
+base - in <a href="http://www.coffeescript.org">Literate CoffeeScript</a> - works on both
+iOS and Android but we experienced a lot of situations where code would work
+fine on one platform and violently crash - with only sparse log entries - on
+the other.</p>
+
+<p>And although I could live with some <code>if OS_IOS</code> code, what really boggles my
+mind is how bad the developer experience with Titanium is. From starting the
+build process to the app opening on a device, no less than a minute will pass.
+Change a single line and start the whole thing over. And never mind that the
+&ldquo;Titanium Studio&rdquo; IDE with its slow speed seems to be built to prove all
+prejudices against Eclipse-based IDEs.</p>
+
+<p>Luckily there is the command line tooling and - most notably - <a href="https://github.com/dbankier/TiShadow/">TiShadow</a>
+to get a speedier process. And from what I&rsquo;ve seen of <a href="https://github.com/omorandi/TiInspector">Ti Inspector</a>
+it provides some decent debugging when targeting iOS. On Android, it&rsquo;s mostly
+debugging like it&rsquo;s (PHP in) 1999: a lot of log-statements to output variable
+contents and state. Regarding the use of the IDE&rsquo;s debugger, I refer you to my
+previous statement about build times.</p>
+
+<p>Somewhat frustrated by that experience, I took last weekend for a quick look at
+Ionic and very much liked what I saw. We now started a side-project with it so
+in a few weeks I may be able to compare its HTML5-based performance to that of
+Titanium.</p>
+
+<p>Personally I wish that one of these frameworks were more like the Windows 8
+SDK. Their HTML-Javascript-based API, together with the possibility to pull in
+libraries from a number of <a href="https://en.wikipedia.org/wiki/Common_Language_Runtime">CLR</a>-
+supported languages like C# and C++, is really fun to work with and develop
+for. And with the help of hardware-accelerated CSS transitions, it&rsquo;s still
+fast and fluid to use.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Thank you for thanking me]]></title>
@@ -47,15 +153,15 @@ whom the tool proved useful.</p>
 
 <p>So this post is to say &ldquo;thank you&rdquo; to all those who contributed or sent me one
 of those mails. I got into software development to write good software that would
-facilitate the life of its users or &ndash; while I was still in game development &ndash;
+facilitate the life of its users or - while I was still in game development -
 provide them some fun in their spare time.</p>
 
 <p>Having said that, I can&rsquo;t describe how uplifting it is to me to find that I seem
 to be successful in this mission. Receiving these emails goes a long way toward
 restoring my faith in humanity <i class='emoji wink'></i>.
 As a result, I want to encourage you to do the same every now and then: whenever
-you find a piece of software to be useful &ndash; especially if it&rsquo;s written by a
-single author or small team &ndash; take a couple of minutes to write its author(s) a
+you find a piece of software to be useful - especially if it&rsquo;s written by a
+single author or small team - take a couple of minutes to write its author(s) a
 few lines to express your gratitude: they&rsquo;ll surely appreciate it.</p>
 
 <p>Interestingly enough, there&rsquo;s a fairly current <a href="https://github.com/rails/rails/issues/16731">&ldquo;issue&rdquo; on Github</a>,
@@ -90,7 +196,7 @@ source software!</p>
     <content type="html"><![CDATA[<p>Some time has passed after my last post and despite my solemn vow to blog more,
 that didn&rsquo;t happen. That&rsquo;s because I&rsquo;ve been a busy bee and, again, too
 preoccupied with other stuff to write anything meaningful.
-The search for a new interesting job was &ndash; luckily &ndash; very short and left me in
+The search for a new interesting job was - luckily - very short and left me in
 the company of the great guys at <a href="http://evopark.de">evopark</a>. There I&rsquo;m now
 responsible for the architecture, implementation and related sys-ops of their
 IT infrastructure. It&rsquo;s loads of fun and I can finally work with Ruby On Rails
@@ -152,7 +258,7 @@ Not that optimal but I&rsquo;m sure we&rsquo;ll get there eventually.</p>
 
 
 
-      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F06%2Fember-data-nested-resources%2F&amp;user_id=ma_il&amp;title=Ember+Data%3A+nested+resources&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=Ember.js%2C%2Cdevelopment" type="text/html" />
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F06%2F06%2Fember-data-nested-resources%2F&amp;user_id=ma_il&amp;title=Ember+Data%3A+nested+resources&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=development%2Cember.js%2C" type="text/html" />
     
     <content type="html"><![CDATA[<p>As anyone who has worked with <a href="http://emberjs.com">Ember.js</a> before can tell
 you, its learning curve is as steep as the framework is awesome. And its awesome
@@ -372,8 +478,8 @@ and a good (though not outstanding) user experience, don&rsquo;t seem to be able
 get the required traction. People don&rsquo;t seem to care about their data.</p>
 
 <p>One year after Edward Snowden publicized the massive intrusions of the <a href="https://en.wikipedia.org/wiki/Five_Eyes">Five Eyes</a>
-states into our personal lives &ndash; and also their close cooperation with other
-intelligence services like the german <a href="http://en.wikipedia.org/wiki/Bundesnachrichtendienst">Bundesnachrichtendienst</a> &ndash;
+states into our personal lives - and also their close cooperation with other
+intelligence services like the german <a href="http://en.wikipedia.org/wiki/Bundesnachrichtendienst">Bundesnachrichtendienst</a> -
 everything is the same as it was before. True, a few nerds may have cancelled
 their Facebook account or installed GPG, but still we have been unable to
 communicate the situation to the vast majority of the population.
@@ -413,7 +519,7 @@ comments on that, please <a href="mailto:mail@marcusilgner.com">drop me a line</
 
 
 
-      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F03%2F02%2Fnumenera-a-random-focus%2F&amp;user_id=ma_il&amp;title=Numenera%3A+a+random+focus&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=Numenera%2C%2CRoleplaying" type="text/html" />
+      <link rel="payment" href="https://flattr.com/submit/auto?url=http%3A%2F%2Fmilgner.github.io%2Fblog%2F2014%2F03%2F02%2Fnumenera-a-random-focus%2F&amp;user_id=ma_il&amp;title=Numenera%3A+a+random+focus&amp;category=text&amp;description=Writing+about+things+I+learn%2C+think+and+do.+Topics+may+involve+software+development%2C+psychology+and+music.&amp;tags=numenera%2C%2Croleplaying" type="text/html" />
     
     <content type="html"><![CDATA[<p>In my quest for more storytelling-oriented role playing systems and more exotic
 settings, I recently came across <a href="http://www.numenera.com">Numenera</a>, a game by
@@ -496,7 +602,7 @@ by 10%. Action.</p>
 <blockquote><p>Note: The initial chance can be really small but it must be plausible. It&rsquo;s not
 realistic that suddenly a piano will fall on an opponent from the sky. But that
 doesn&rsquo;t mean that some of the artifacts he&rsquo;s carrying won&rsquo;t suddenly go haywire
-or that his sword &ndash; despite being forged my a master craftsman &ndash; breaks.</p></blockquote>
+or that his sword - despite being forged my a master craftsman - breaks.</p></blockquote>
 ]]></content>
   </entry>
   
@@ -534,7 +640,7 @@ instead of good ol&#8217; <code>F1</code> through <code>F12</code>. On Windows t
 software. But on Linux, where I do most of my hacking, it is a major PITA to always need to use the <code>Fn</code> modifier.</p>
 
 <p>At first, I thought I&rsquo;d just have to roll with it or begin <em>The Chase For A Comfortable Keyboard</em> anew but after
-accidentally shutting down my machine yesterday &ndash; when all I wanted to was to press F12, forgetting the modifier &ndash;,
+accidentally shutting down my machine yesterday - when all I wanted to was to press F12, forgetting the modifier -,
 I was overcome by a sudden Nerd Rage: this device obviously needed some serious hacking.</p>
 
 <p>Equipped with cursory knowledge about the USB protocol and my usual can-do-attitude, I fired up the browser,
@@ -668,8 +774,8 @@ to build high-tech jets and other weaponry just to kill each other.</p>
 
 <p>The <em>Star Wars</em> movie awakened in me the notion that people are driven to this
 behaviour via these emotions, fear and anger, followed by hate.
-The story also told how engaging in evil acts &ndash; those associated with the <em>Dark
-Side</em> &ndash; would have a poisonous effect on someones character, leading them down a
+The story also told how engaging in evil acts - those associated with the <em>Dark
+Side</em> - would have a poisonous effect on someones character, leading them down a
 road towards more and more evil.
 And since it was clear to my young and impressionable mind that I didn&rsquo;t want to
 be evil, I concluded that I would ever need to be wary of these emotions, fear,
@@ -701,9 +807,9 @@ how <em>Star Wars</em> influenced my life. It probably could have been any other
 too, so this is kind of a bonus scene in this blog post.</p>
 
 <p>At the age of 13 or 14 years I started having occasional nightmares. Therein I
-was chased by evil characters who wanted to shoot me. After a few repetitions &ndash;
+was chased by evil characters who wanted to shoot me. After a few repetitions -
 each one some time apart: this is not that kind of story where the young boy is
-haunted by nightmares every night &ndash; the pursuers turned from gangsters shooting
+haunted by nightmares every night - the pursuers turned from gangsters shooting
 at me into the droids C-3PO and R2-D2 from the <em>Star Wars</em> movie.
 Ok, now I should probably give you some time to stop laughing. Awake, I found the
 notion quite ridiculous myself: the meanest thing C-3PO would have been able to
@@ -722,11 +828,11 @@ thus wake from the dream.
 The first time I did this I was more scared of trying this than from the actual
 nightmare. But it worked and I could wake, turn around in my bed and fall peacefully
 asleep again.
-The second time &ndash; or maybe third, I don&rsquo;t exactly remember &ndash; I grew more adventurous.
+The second time - or maybe third, I don&rsquo;t exactly remember - I grew more adventurous.
 Since it was a dream, I decided, I didn&rsquo;t need to die but I could as well fly away
 from the two figures who, even though relentless as robots, were quite slow and could
 never catch me. And once again it worked. Unbeknown to my younger self, I had taken
-my first steps &ndash; or flight &ndash; in <a href="https://en.wikipedia.org/wiki/Lucid_dream">Lucid dreaming</a>.
+my first steps - or flight - in <a href="https://en.wikipedia.org/wiki/Lucid_dream">Lucid dreaming</a>.
 All combined, I can say without doubt that <em>Star Wars</em> spiked both my desire in mastering
 my emotions and realizing that, with some training, I could master my consciousness
 enough to even control my dreams.</p>
@@ -755,7 +861,7 @@ enough to even control my dreams.</p>
     
     <content type="html"><![CDATA[<p>Now for a short break. Or make that a wish for more breaks. Time has been
 especially short for me for the last few weeks. I even had to cancel my vacation
-&ndash; just when I was looking forward to catching up on my MOOCs.</p>
+- just when I was looking forward to catching up on my MOOCs.</p>
 
 <p>But all crunchtime must come to an end and there really are some interesting
 courses to look forward to, too.</p>
@@ -783,7 +889,7 @@ a couple of months ago, I found myself more and more intrigued with the topic of
 Storytelling.
 I also watched the first week of <a href="https://www.coursera.org/course/onlinegames">Online Games: Literature, New Media, and Narrative</a> on Coursera, but somehow couldn&rsquo;t really warm to it.
 So I&rsquo;m really looking forward to this course on Iversity.
-The hashtag is #storymooc &ndash; see you there!</p>
+The hashtag is #storymooc - see you there!</p>
 ]]></content>
   </entry>
   
@@ -851,8 +957,8 @@ applying these using a newspaper article.
 What struck me as somewhat strange was the part about avoiding the <a href="https://en.wikipedia.org/wiki/Skeptical_regress">skeptical regress</a>.
 While it is obvious that one doesn&rsquo;t want to needlessly challenge every premise,
 I stumbled over the bit where the professor mentioned that assuring your audience
-using authority can be a good thing. Even or &ndash; due to <a href="https://en.wikipedia.org/wiki/Confirmation_bias">confirmation bias</a>
-and other psychological phenomena &ndash; <em>especially</em> someone very familiar with a given
+using authority can be a good thing. Even or - due to <a href="https://en.wikipedia.org/wiki/Confirmation_bias">confirmation bias</a>
+and other psychological phenomena - <em>especially</em> someone very familiar with a given
 topic can be prone to erroneous judgement.
 So I missed some kind of interjection that, given evidence for doubt, one should
 always follow up on skeptical objections to premises. Just countering with a
@@ -938,8 +1044,8 @@ of headaches in the past.</p>
 
 <p>But the other, much graver reason is that I&rsquo;m completely flabberghasted about the
 law regarding comments on webpages in Germany. In a nutshell, it would require
-very strict oversight and moderation on my part because if somebody &ndash; in an attempt
-to troll, spam or for whatever reason &ndash; posts something that&rsquo;s illegal in Germany,
+very strict oversight and moderation on my part because if somebody - in an attempt
+to troll, spam or for whatever reason - posts something that&rsquo;s illegal in Germany,
 I would be personally held responsible.
 And although I&rsquo;m doing this as a hobby, the fact that posts may occasionally
 include software-development-related topics could lead a potential judge to
