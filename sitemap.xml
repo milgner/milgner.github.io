@@ -1,86 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/11/09/on-mobile-app-development/</loc>
-    <lastmod>2014-11-09T12:27:19+01:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/</loc>
+    <lastmod>2019-10-26T16:45:35+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/09/02/thank-you-for-thanking-me/</loc>
-    <lastmod>2014-09-02T20:54:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/projects/</loc>
+    <lastmod>2019-10-26T16:45:35+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/08/09/reporting-in-rails/</loc>
-    <lastmod>2014-08-09T21:25:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/about/</loc>
+    <lastmod>2019-10-26T16:19:45+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/06/06/ember-data-nested-resources/</loc>
-    <lastmod>2014-06-06T20:19:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/series/meta/</loc>
+    <lastmod>2019-10-26T15:46:15+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/06/04/gitlab-ci-clashing-sidekiqs/</loc>
-    <lastmod>2014-06-04T23:42:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/posts/new-blog-initiative/</loc>
+    <lastmod>2019-10-26T15:46:15+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/05/31/to-new-horizons/</loc>
-    <lastmod>2014-05-31T11:31:00+02:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/posts/</loc>
+    <lastmod>2019-10-26T15:46:15+02:00</lastmod>
   </url>
+  
   <url>
-    <loc>http://milgner.github.io/blog/2014/03/02/numenera-a-random-focus/</loc>
-    <lastmod>2014-03-02T11:37:00+01:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://marcusilgner.com/series/</loc>
+    <lastmod>2019-10-26T15:46:15+02:00</lastmod>
   </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2014/01/24/friday-night-hack-logitech-k290-on-linux/</loc>
-    <lastmod>2014-01-24T22:06:00+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2014/01/10/a-cheer-for-ignorance/</loc>
-    <lastmod>2014-01-10T21:55:00+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2013/10/28/storymooc-and-star-wars/</loc>
-    <lastmod>2013-10-28T20:25:00+01:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2013/10/15/for-a-short-break-i-wish/</loc>
-    <lastmod>2013-10-15T22:37:00+02:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2013/09/05/think-again/</loc>
-    <lastmod>2013-09-05T00:03:00+02:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/2013/09/01/starting-out/</loc>
-    <lastmod>2013-09-01T13:03:00+02:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/</loc>
-    <lastmod>2014-11-09T13:35:59+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/blog/archives/</loc>
-    <lastmod>2014-11-09T13:35:59+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>http://milgner.github.io/imprint/</loc>
-    <lastmod>2014-11-09T13:35:59+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
 </urlset>

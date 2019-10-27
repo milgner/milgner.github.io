@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/series/</link>
+    <description>Recent content in Series on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 26 Oct 2019 15:46:15 +0200</lastBuildDate>
+    
+	<atom:link href="https://marcusilgner.com/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>meta</title>
+      <link>https://marcusilgner.com/series/meta/</link>
+      <pubDate>Sat, 26 Oct 2019 15:46:15 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/series/meta/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

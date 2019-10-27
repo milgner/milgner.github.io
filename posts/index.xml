@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/posts/</link>
+    <description>Recent content in Posts on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 26 Oct 2019 15:46:15 +0200</lastBuildDate>
+    
+	<atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New website &amp; blogging initiative</title>
+      <link>https://marcusilgner.com/posts/new-blog-initiative/</link>
+      <pubDate>Sat, 26 Oct 2019 15:46:15 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/new-blog-initiative/</guid>
+      <description>So here&amp;rsquo;s my new website 🎉 And I have plans to start blogging more about IT &amp;amp; software development topics again. My days at evopark are coming to an end and in December I&amp;rsquo;ll start my new job at i22 Digitalagentur in Bonn.
+Since I&amp;rsquo;ll have some free time on my hands until then - I decided that I should take some time to clear my head instead of jumping head first from one job into the next - I thought that I should use this time of new beginnings and also update my blog and finally write down some of the things that have been going through my mind in the last couple of months.</description>
+    </item>
+    
+  </channel>
+</rss>
