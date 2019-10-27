@@ -1,0 +1,61 @@
+baseURL = "https://marcusilgner.com/"
+languageCode = "en-uk"
+title = "Marcus Ilgner"
+theme = "hugo-coder"
+enableEmoji = true
+
+disqusShortname = "milgner"
+
+pygmentsstyle = "b2"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+canonifyurls = true
+
+[taxonomies]
+  series = "series"
+
+[params]
+  author = "Marcus Ilgner"
+  info = "Hacker, hiker, hobby musician"
+  avatarurl = "images/avatar.jpg"
+
+  keywords = "blog,developer,personal"
+  rtl = false
+  dateformat = "January 2, 2006"
+
+
+  # Custom CSS
+  custom_css = []
+  
+  # Custom JS
+  custom_js = []
+
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github fa-2x"
+    weight = 1
+    url = "https://github.com/milgner/"
+[[params.social]]
+    name = "Gitlab"
+    icon = "fab fa-gitlab fa-2x"
+    weight = 2
+    url = "https://gitlab.com/milgner/"
+[[params.social]]
+    name = "Xing"
+    icon = "fab fa-xing fa-2x"
+    weight = 3
+    url = "https://www.xing.com/profile/Marcus_Ilgner"
+
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "Projects"
+    weight = 2
+    url = "/projects/"
+[[menu.main]]
+    name = "About"
+    weight = 3
+    url = "/about/"
