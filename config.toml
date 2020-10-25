@@ -17,7 +17,7 @@ canonifyurls = true
 
 [params]
   author = "Marcus Ilgner"
-  info = "Hacker, hiker, hobby musician"
+  info = "Hacker, hiker, gaming geek"
   avatarurl = "images/avatar.jpg"
 
   keywords = "blog,developer,personal"
@@ -26,7 +26,7 @@ canonifyurls = true
 
 
   # Custom CSS
-  custom_css = []
+  custom_css = ["custom.css"]
   
   # Custom JS
   custom_js = []
@@ -47,10 +47,10 @@ canonifyurls = true
     weight = 3
     url = "https://www.xing.com/profile/Marcus_Ilgner"
 
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/posts/"
+#[[menu.main]]
+#    name = "Blog"
+#    weight = 1
+#    url  = "/posts/"
 [[menu.main]]
     name = "Projects"
     weight = 2
