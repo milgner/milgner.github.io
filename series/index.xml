@@ -5,6 +5,16 @@
     <link>https://marcusilgner.com/series/</link>
     <description>Recent content in Series on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-uk</language><atom:link href="https://marcusilgner.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-uk</language>
+    <lastBuildDate>Mon, 05 Apr 2021 13:31:04 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vert.x basics</title>
+      <link>https://marcusilgner.com/series/vert.x-basics/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/series/vert.x-basics/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

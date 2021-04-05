@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://marcusilgner.com/projects/</loc>
-    <lastmod>2020-10-25T14:13:35+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://marcusilgner.com/about/</loc>
-    <lastmod>2019-10-26T16:19:45+02:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://marcusilgner.com/imprint/</loc>
-    <lastmod>2019-10-26T16:19:45+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-04-05T14:45:59+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/gradle/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/kotlin/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
     <loc>https://marcusilgner.com/</loc>
-  </url>
-  
-  <url>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
     <loc>https://marcusilgner.com/series/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/vert.x/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/series/vert.x-basics/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/vue-3/</loc>
+    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/projects/</loc>
+    <lastmod>2020-10-25T14:13:35+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/about/</loc>
+    <lastmod>2019-10-26T16:19:45+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/categories/</loc>
   </url>
-  
 </urlset>

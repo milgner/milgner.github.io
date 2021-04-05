@@ -5,7 +5,30 @@
     <link>https://marcusilgner.com/</link>
     <description>Recent content on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-uk</language><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-uk</language>
+    <lastBuildDate>Mon, 05 Apr 2021 13:31:04 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Imprint</title>
+      <link>https://marcusilgner.com/imprint/</link>
+      <pubDate>Mon, 05 Apr 2021 14:45:59 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/imprint/</guid>
+      <description>Impressum    Angaben gemäß § 5 TMG; verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
+ Marcus Ilgner Kölner Str. 98 53840 Troisdorf Deutschland  Kontakt    Fax: 02241 1695662
+E-Mail: domain@marcusilgner.com
+Haftungsausschluss:    Haftung für Links    Dieses Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen.</description>
+    </item>
+    
+    <item>
+      <title>Deploy a Vert.x app with an embedded SPA</title>
+      <link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid>
+      <description>Deploy a Vert.x application with an embedded SPA    As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
+Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description>
+    </item>
+    
     <item>
       <title>Projects</title>
       <link>https://marcusilgner.com/projects/</link>
@@ -22,22 +45,7 @@
       <pubDate>Sat, 26 Oct 2019 16:19:45 +0200</pubDate>
       
       <guid>https://marcusilgner.com/about/</guid>
-      <description>Born 1982, I spent my teenage years witnessing and exploring the rise of the internet. Since, I have been able to gather professional experience in a number of technologies: everything from network security and setting up Sendmail-based mail servers 📨, doing computer games development in C++ and DirectX 🎮, via Java business software 💼 up to web applications with Ruby On Rails 💎. Today I work at i22 Digitalagentur, assisting our customers in introducing new technology into their business.</description>
-    </item>
-    
-    <item>
-      <title>Impressum</title>
-      <link>https://marcusilgner.com/imprint/</link>
-      <pubDate>Sat, 26 Oct 2019 16:19:45 +0200</pubDate>
-      
-      <guid>https://marcusilgner.com/imprint/</guid>
-      <description>Angaben gemäß § 5 TMG; verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
-Marcus Ilgner
-Kölner Str. 98
-53840 Troisdorf
-Kontakt Fax: 02241 1695662
-E-Mail: domain@marcusilgner.com
-Haftungsausschluss: Haftung für Links Dieses Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte ich keinen Einfluss habe. Deshalb kann ich für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</description>
+      <description>Born 1982, I spent my teenage years witnessing and exploring the rise of the internet. Since, I have been able to gather professional experience in a number of technologies: everything from network security and setting up Sendmail-based mail servers 📨, doing computer games development in C++ and DirectX 🎮, via Java business software 💼 up to web applications with Ruby On Rails 💎 and real-time data processing applications with Vert.x ✈️.</description>
     </item>
     
   </channel>
