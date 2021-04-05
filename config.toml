@@ -4,7 +4,7 @@ title = "Marcus Ilgner"
 theme = "hugo-coder"
 enableEmoji = true
 
-disqusShortname = "milgner"
+disqusShortname = "marcusilgner"
 
 pygmentsstyle = "monokai"
 pygmentscodefences = true
