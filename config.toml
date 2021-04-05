@@ -6,7 +6,7 @@ enableEmoji = true
 
 disqusShortname = "milgner"
 
-pygmentsstyle = "b2"
+pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
@@ -27,6 +27,7 @@ canonifyurls = true
   keywords = "blog,developer,personal"
   rtl = false
   dateformat = "January 2, 2006"
+  since = "2018"
 
 
   # Custom CSS
@@ -68,3 +69,8 @@ canonifyurls = true
     name = "About"
     weight = 3
     url = "/about/"
+[[menu.imprint]]
+    name = "Imprint"
+    weight = 4
+    url = "/imprint/"
+
