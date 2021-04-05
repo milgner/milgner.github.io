@@ -14,11 +14,15 @@ canonifyurls = true
 
 [taxonomies]
   series = "series"
+  category = "categories"
+  tag = "tags"
 
 [params]
   author = "Marcus Ilgner"
   info = "Hacker, hiker, gaming geek"
   avatarurl = "images/avatar.jpg"
+  # gravatar = "mail@marcusilgner.com"
+  enableTwemoji = true
 
   keywords = "blog,developer,personal"
   rtl = false
@@ -46,11 +50,16 @@ canonifyurls = true
     icon = "fab fa-xing fa-2x"
     weight = 3
     url = "https://www.xing.com/profile/Marcus_Ilgner"
+[[params.social]]
+    name = "Twitter"
+    icon = "fab fa-twitter fa-2x"
+    weight = 4
+    url = "https://twitter.com/LambdaAbstract"
 
-#[[menu.main]]
-#    name = "Blog"
-#    weight = 1
-#    url  = "/posts/"
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
 [[menu.main]]
     name = "Projects"
     weight = 2
