@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://marcusilgner.com/tags/arc42/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/documentation/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/series/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/series/software-documentation/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</loc>
+    <lastmod>2021-05-20T20:39:10+02:00</lastmod>
+  </url><url>
     <loc>https://marcusilgner.com/imprint/</loc>
     <lastmod>2021-04-05T14:45:59+02:00</lastmod>
   </url><url>
@@ -12,18 +36,6 @@
     <lastmod>2021-04-05T13:31:04+02:00</lastmod>
   </url><url>
     <loc>https://marcusilgner.com/tags/kotlin/</loc>
-    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/</loc>
-    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/posts/</loc>
-    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/series/</loc>
-    <lastmod>2021-04-05T13:31:04+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/tags/</loc>
     <lastmod>2021-04-05T13:31:04+02:00</lastmod>
   </url><url>
     <loc>https://marcusilgner.com/tags/vert.x/</loc>
