@@ -38,23 +38,28 @@ canonifyurls = true
 
 [[params.social]]
     name = "Github"
-    icon = "fab fa-github fa-2x"
+    icon = "fa fa-github fa-2x"
     weight = 1
     url = "https://github.com/milgner/"
 [[params.social]]
     name = "Gitlab"
-    icon = "fab fa-gitlab fa-2x"
+    icon = "fa fa-gitlab fa-2x"
     weight = 2
     url = "https://gitlab.com/milgner/"
 [[params.social]]
     name = "Xing"
-    icon = "fab fa-xing fa-2x"
+    icon = "fa fa-xing fa-2x"
     weight = 3
     url = "https://www.xing.com/profile/Marcus_Ilgner"
 [[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
+    name = "LinkedIn"
+    icon = "fa fa-linkedin fa-2x"
     weight = 4
+    url = "https://www.linkedin.com/in/marcus-ilgner-32aaa81b2/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fa fa-twitter fa-2x"
+    weight = 5
     url = "https://twitter.com/LambdaAbstract"
 
 [[menu.main]]
