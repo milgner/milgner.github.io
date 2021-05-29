@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 14:08:33 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Bit of Git Part 1</title>
+      <link>https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/</link>
+      <pubDate>Sat, 29 May 2021 14:08:33 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/</guid>
+      <description>A bit of git (each day) - Part 1: Basics    Since its inception in 2005, git has quickly established itself as the de-facto standard for version control in software development.
+Yet I find that surprisingly many developers struggle with using it to its full potential even after many years of having been in contact with it. There is an excellent book &amp;ldquo;Pro Git&amp;rdquo; available online but for some reason not many people are familiar with its contents or are lacking some focussed exposure to the many aspects therein.</description>
+    </item>
+    
     <item>
       <title>Wikis aren&#39;t meant for software documentation</title>
       <link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link>

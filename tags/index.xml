@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 14:08:33 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>https://marcusilgner.com/tags/git/</link>
+      <pubDate>Sat, 29 May 2021 14:08:33 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>arc42</title>
       <link>https://marcusilgner.com/tags/arc42/</link>

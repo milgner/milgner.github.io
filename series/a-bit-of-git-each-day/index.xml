@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Bit of Git (Each Day) on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/series/a-bit-of-git-each-day/</link>
+    <description>Recent content in A Bit of Git (Each Day) on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 29 May 2021 14:08:33 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/series/a-bit-of-git-each-day/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Bit of Git Part 1</title>
+      <link>https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/</link>
+      <pubDate>Sat, 29 May 2021 14:08:33 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/</guid>
+      <description>A bit of git (each day) - Part 1: Basics    Since its inception in 2005, git has quickly established itself as the de-facto standard for version control in software development.
+Yet I find that surprisingly many developers struggle with using it to its full potential even after many years of having been in contact with it. There is an excellent book &amp;ldquo;Pro Git&amp;rdquo; available online but for some reason not many people are familiar with its contents or are lacking some focussed exposure to the many aspects therein.</description>
+    </item>
+    
+  </channel>
+</rss>

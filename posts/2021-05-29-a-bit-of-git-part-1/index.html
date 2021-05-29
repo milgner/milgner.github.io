@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Marcus Ilgner">
+    <meta name="description" content="A bit of git (each day) - Part 1: Basics    Since its inception in 2005, git has quickly established itself as the de-facto standard for version control in software development.
+Yet I find that surprisingly many developers struggle with using it to its full potential even after many years of having been in contact with it. There is an excellent book &ldquo;Pro Git&rdquo; available online but for some reason not many people are familiar with its contents or are lacking some focussed exposure to the many aspects therein.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Bit of Git Part 1"/>
+<meta name="twitter:description" content="A bit of git (each day) - Part 1: Basics    Since its inception in 2005, git has quickly established itself as the de-facto standard for version control in software development.
+Yet I find that surprisingly many developers struggle with using it to its full potential even after many years of having been in contact with it. There is an excellent book &ldquo;Pro Git&rdquo; available online but for some reason not many people are familiar with its contents or are lacking some focussed exposure to the many aspects therein."/>
+
+    <meta property="og:title" content="A Bit of Git Part 1" />
+<meta property="og:description" content="A bit of git (each day) - Part 1: Basics    Since its inception in 2005, git has quickly established itself as the de-facto standard for version control in software development.
+Yet I find that surprisingly many developers struggle with using it to its full potential even after many years of having been in contact with it. There is an excellent book &ldquo;Pro Git&rdquo; available online but for some reason not many people are familiar with its contents or are lacking some focussed exposure to the many aspects therein." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-29T14:08:33&#43;02:00" />
+<meta property="article:modified_time" content="2021-05-29T14:08:33&#43;02:00" />
+
+
+
+
+    <title>
+  A Bit of Git Part 1 · Marcus Ilgner
+</title>
+
+    
+      <link rel="canonical" href="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/">
+    
+
+    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+    
+
+    <meta name="generator" content="Hugo 0.82.0" />
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/">
+              A Bit of Git Part 1
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-05-29T14:08:33&#43;02:00'>
+                May 29, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="https://marcusilgner.com/authors/marcus-ilgner/">Marcus Ilgner</a></div>
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/git/">git</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="a-bit-of-git-each-day---part-1-basics">
+  A bit of git (each day) - Part 1: Basics
+  <a class="heading-link" href="#a-bit-of-git-each-day---part-1-basics">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>Since its inception in 2005, <a href="https://git-scm.com/">git</a> has quickly
+established itself as the de-facto standard for version control in software
+development.</p>
+<p>Yet I find that surprisingly many developers struggle with using it to its
+full potential even after many years of having been in contact with it.
+There is an excellent <a href="https://git-scm.com/book/en/v2/">book &ldquo;Pro Git&rdquo;</a>
+available online but for some reason not many people are familiar with its
+contents or are lacking some focussed exposure to the many aspects therein.</p>
+<p>This series is my personal endeavour to rectify this by providing a number
+of short articles to explain both concepts behind git as well as practical
+tips, so that by spending just a few minutes each day, you&rsquo;ll soon have all
+the knowledge you need to competently employ git in your daily work.</p>
+<p>To be on the safe side, I won&rsquo;t assume any prior knowledge and start with a
+few basics. If you already had practical exposure to git, you&rsquo;ll probably know
+most if not all of this. In that case, feel free to skip ahead and come back
+tomorrow to read about another aspect of working with git: branching
+and branching strategies.</p>
+<h2 id="whats-a-distributed-version-control-system">
+  What&rsquo;s a (distributed) version control system?
+  <a class="heading-link" href="#whats-a-distributed-version-control-system">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Git is a distributed version control system. Essentially, a version control
+system is a piece of software that helps you to keep track of changes to one
+or more files and, when working in a team, coordinate the changes made by the
+members of that team so they can change version-controlled files without
+accidentally overriding or deleting someone elses work.</p>
+<p><em>Distributed</em> means that the whole set of information about these tracked
+files and changes therein - the <em>repository</em> - is not only kept in one
+central place but can be distributed among many places. That usually means
+locally on the computers of the people working with it - i.e. you - as well
+as a number of servers, called <em>remotes</em>. Indeed, any machine that has a copy
+of the repository has all the information required to act as a remote, too.
+It also means that every action regarding that repository can be executed
+without having to consult with another system.</p>
+<blockquote>
+<p>Creating another copy of a repository is called <em>cloning</em>. That&rsquo;s why we
+use the command <code>git clone &lt;repository-url&gt;</code> to start working with code
+from services like Github, Gitlab and others on our machines.</p>
+</blockquote>
+<h3 id="gitting-started-scnr">
+  Gitting started (SCNR)
+  <a class="heading-link" href="#gitting-started-scnr">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>If you still have some time on your hands and are looking for some commands
+to do some hands-on experimentation, I refer you to <a href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">chapter 2</a>
+of the aforementioned book Pro Git where you&rsquo;ll find just that.</p>
+<p>But from my side, that&rsquo;s all for today - keep learning and see you tomorrow!</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+  
+</section>
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "marcusilgner" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2018 -
+        
+        2021
+         Marcus Ilgner 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://marcusilgner.com/js/coder.min.235666b114443867d43eeb5799d51f6252965e5163f338285e113fa381d3d27e.js" integrity="sha256-I1ZmsRREOGfUPutXmdUfYlKWXlFj8zgoXhE/o4HT0n4="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
