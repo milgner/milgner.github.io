@@ -6,7 +6,17 @@
     <description>Recent content on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 29 May 2021 14:08:33 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 May 2021 14:54:35 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Bit of Git Part 2: Branching Strategies</title>
+      <link>https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/</link>
+      <pubDate>Sun, 30 May 2021 14:54:35 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/</guid>
+      <description>A bit of git (each day) - Part 2: Branching Strategies    After a short introduction to the git basics, we should talk about branching. If you work on your own, you&amp;rsquo;re free to name your branches any way you like - but if you try to develop software in a team, that&amp;rsquo;s a clear recipe for chaos.
+What&amp;rsquo;s a branching strategy?    To solve this issue, you&amp;rsquo;ll have to communicate among your team to specify a branching strategy which defines how to name your branches, how different branches are merged into another and usually also have a say in which version of your software gets deployed or delivered to your users.</description>
+    </item>
+    
     <item>
       <title>A Bit of Git Part 1</title>
       <link>https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/</link>

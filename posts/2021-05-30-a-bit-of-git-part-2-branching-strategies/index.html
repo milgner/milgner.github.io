@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Marcus Ilgner">
+    <meta name="description" content="An overview about Git branching strategies and their properties">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Bit of Git Part 2: Branching Strategies"/>
+<meta name="twitter:description" content="An overview about Git branching strategies and their properties"/>
+
+    <meta property="og:title" content="A Bit of Git Part 2: Branching Strategies" />
+<meta property="og:description" content="An overview about Git branching strategies and their properties" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-05-30T14:54:35&#43;02:00" />
+<meta property="article:modified_time" content="2021-05-30T14:54:35&#43;02:00" />
+<meta property="og:see_also" content="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/" />
+
+
+
+    <title>
+  A Bit of Git Part 2: Branching Strategies · Marcus Ilgner
+</title>
+
+    
+      <link rel="canonical" href="https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/">
+    
+
+    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+    
+
+    <meta name="generator" content="Hugo 0.82.0" />
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/">
+              A Bit of Git Part 2: Branching Strategies
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-05-30T14:54:35&#43;02:00'>
+                May 30, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="https://marcusilgner.com/authors/marcus-ilgner-mailmarcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/git/">git</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="a-bit-of-git-each-day---part-2-branching-strategies">
+  A bit of git (each day) - Part 2: Branching Strategies
+  <a class="heading-link" href="#a-bit-of-git-each-day---part-2-branching-strategies">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>After a short introduction to the git basics, we should talk about branching.
+If you work on your own, you&rsquo;re free to name your branches any way you like -
+but if you try to develop software in a team, that&rsquo;s a clear recipe for chaos.</p>
+<h2 id="whats-a-branching-strategy">
+  What&rsquo;s a branching strategy?
+  <a class="heading-link" href="#whats-a-branching-strategy">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>To solve this issue, you&rsquo;ll have to communicate among your team to specify a
+branching strategy which defines how to name your branches, how different
+branches are merged into another and usually also have a say in which version
+of your software gets deployed or delivered to your users.</p>
+<p>There are a number of well-established schemes in circulation, each with their
+specific advantages and shortcomings. And of course you are free to improve
+and adapt these schemes to best fit your workflows - just take care to
+document your workflow so you can communicate your chosen strategy to new team
+members.</p>
+<p>I&rsquo;ll forgo creating fancy graphs for the different models and instead link to
+their respective documentation where you can look up any details.</p>
+<h2 id="the-original-git-flow">
+  The original: Git Flow
+  <a class="heading-link" href="#the-original-git-flow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Git Flow is - to the best of my knowledge the first widely publicized branching
+strategy. It was originally published in 2010 in <a href="https://nvie.com/posts/a-successful-git-branching-model/">a blog article</a>
+by Vincent Driessen. It quickly became a kind of de-facto standard and there is
+a lot of tooling available - but as the author points out in an amendment to
+the original article, it&rsquo;s not a panacea and possibly unsuited in many
+situations.</p>
+<p>Roughly speaking, git flow starts work from a main branch called <code>develop</code>.
+From there, most work is done in <em>feature branches</em> (usually named <code>feature/[short-feature-description]</code>).
+Once you are getting ready to release a new version of the software, one
+creates a <em>release branch</em>. Bugfixes related to that release are made in
+that branch and once the software is deemed ready to release, that release
+branch is merged into <strong>both</strong> the <code>master</code> and <code>develop</code> branches.
+If you need to make hotfixes to the software running on production, you create
+a <em>hotfix branch</em> which is merged into <strong>both</strong> <code>master</code> and <code>develop</code> again.
+Every time something is merged into <code>master</code>, one creates a <em>version tag</em>.</p>
+<h3 id="when-to-use-git-flow">
+  When to use Git Flow
+  <a class="heading-link" href="#when-to-use-git-flow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>Git Flow is especially useful if:</p>
+<ul>
+<li>you need to maintain multiple versions of your software in the wild</li>
+<li>you have a (possibly) lengthy QA period which tests every feature (i.e. not
+only new features) and need to ensure the software isn&rsquo;t evolving while it&rsquo;s
+undergoing testing</li>
+</ul>
+<h2 id="a-simple-variant-github-flow">
+  A simple variant: Github Flow
+  <a class="heading-link" href="#a-simple-variant-github-flow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>This is where <a href="https://guides.github.com/introduction/flow/">Github Flow</a>
+comes in.
+It&rsquo;s a very simple branching strategy based on one tenet: everything in the
+<code>main</code> branch is always ready to deploy. Just like in Git Flow, you start
+feature branches off of that default branch, but QA of new features is done
+by deploying these branches and checking the functionality of these specific
+changes.
+There is no explicit mention of versioning and since everything in <code>main</code> is
+always deployable any bugfix is treated like another feature branch.</p>
+<h3 id="when-to-use-github-flow">
+  When to use Github Flow
+  <a class="heading-link" href="#when-to-use-github-flow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>Contrary to Git Flow, Github Flow is especially useful if you&rsquo;re running a
+SaaS-style application on your own servers: there is only one instance of your
+software and Github Flow enables you to focus on fast iteration and delivery
+of both features and bugfixes.</p>
+<h2 id="another-competitor-oneflow">
+  Another competitor: OneFlow
+  <a class="heading-link" href="#another-competitor-oneflow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>As lined out in the <a href="https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow#when-to-use-oneflow">article explaining OneFlow</a>,
+it is meant as a drop-in replacement for GitFlow and mostly tries to focus
+on the short-livedness of the non-main branches.</p>
+<p>The concepts are the same (main, feature, release and hotfix branches, version
+tags) but there are also a couple of decisions to make, as there are multiple
+ways to finish a feature branch:</p>
+<ul>
+<li><em>rebase</em>: all changes from a feature branch are rewritten before merge to
+produce a linear history. In my opinion the &ldquo;clean&rdquo; history graph doesn&rsquo;t
+warrant the effort from rebasing, potentially loosing GPG signatures on the
+affected commits.</li>
+<li><em>merge -no-ff</em>: a feature branch is merged into the main branch, ensuring
+that a merge commit is created even if fast-forwarding (linear history)
+would have been possible.</li>
+<li><em>rebase + merge -no-ff</em>: a combination of the above. It&rsquo;s supposed to negate
+any disadvantages of the first two, but my reservations regarding <em>rebase</em>
+still apply.</li>
+</ul>
+<p>Originally, OneFlow was born out of a desire to achieve a clean, easily
+readable history, which is why the <em>rebase</em>-based approaches are still
+prevalent with OneFlow users.</p>
+<p>There is also a variant of OneFlow which again uses separate <code>develop</code> and
+<code>master</code> branches after which - in my mind - the differences to GitFlow are
+neglible.</p>
+<h2 id="theres-more-gitlab-flow">
+  There&rsquo;s more! GitLab Flow
+  <a class="heading-link" href="#theres-more-gitlab-flow">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>So of course that&rsquo;s not all. In order to get a good impression of what kind of
+considerations go into choosing a proper workflow, let me also say a few words
+about <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab Flow</a>.</p>
+<p>In GitLab Flow, you have so called <em>environment branches</em>. These are also
+oriented towards development of SaaS-style software where you have one
+codebase which is running in different environments like <em>testing</em>, <em>staging</em>
+and <em>production</em>. Each of these branches receives its own branch.</p>
+<p>It also advocates to reduce merge commits by rebasing your changes.
+As mentioned previously, I&rsquo;m not the biggest fan of rebasing, but it can be
+helpful if it&rsquo;s being done manually by the original author(s) as a cleanup
+step <em>before creating a merge request</em>, as outlined <a href="https://www.atlassian.com/blog/git/git-team-workflows-merge-or-rebase">by this blog article from Atlassian</a> -
+you just have to be willing to invest that effort to get a &ldquo;nicer&rdquo; history.</p>
+<p>It is my opinion that proper mastery of git can easily compensate for a few
+more merge requests.</p>
+<p>Another thing that bothers me about GitLab Flow: environment branches are
+clashing with my concept of software, where you decide to release a given
+state and then run it in any environment you want to.</p>
+<h2 id="wrap-up-my-personal-take-on-branching">
+  Wrap up: my personal take on branching
+  <a class="heading-link" href="#wrap-up-my-personal-take-on-branching">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>I already mentioned that I&rsquo;m not bothered by merge commits and that I&rsquo;m a fan
+of giving released versions of software a version tag.
+Automatic rebasing and/or squashing is a big no-go in my opinion because it
+looses a lot of information about the history. Especially if you&rsquo;re used to
+writing good commit messages, potentially using <a href="conventionalcommits.org/">Conventional Commits</a>.</p>
+<p>As such, OneFlow with <em>merge -no-ff</em> is my preferred approach of the ones
+listed here. For SaaS-style applications, Github Flow would be good, too, but
+you&rsquo;ll have to ensure that it fits your remaining processes like QA and
+continuous delivery, too.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-a-bit-of-git-each-day">
+        See also in A Bit of Git (Each Day)
+        <a class="heading-link" href="#see-also-in-a-bit-of-git-each-day">
+          <i class="fa fa-link" aria-hidden="true"></i>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/">A Bit of Git Part 1</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "marcusilgner" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2018 -
+        
+        2021
+         Marcus Ilgner 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://marcusilgner.com/js/coder.min.235666b114443867d43eeb5799d51f6252965e5163f338285e113fa381d3d27e.js" integrity="sha256-I1ZmsRREOGfUPutXmdUfYlKWXlFj8zgoXhE/o4HT0n4="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
