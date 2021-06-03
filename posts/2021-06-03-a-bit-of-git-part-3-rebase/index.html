@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Marcus Ilgner">
+    <meta name="description" content="Everything you ever wanted to know about rebase">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Bit of Git Part 3: Rebase"/>
+<meta name="twitter:description" content="Everything you ever wanted to know about rebase"/>
+
+    <meta property="og:title" content="A Bit of Git Part 3: Rebase" />
+<meta property="og:description" content="Everything you ever wanted to know about rebase" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcusilgner.com/posts/2021-06-03-a-bit-of-git-part-3-rebase/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-03T14:45:31&#43;02:00" />
+<meta property="article:modified_time" content="2021-06-03T14:45:31&#43;02:00" />
+<meta property="og:see_also" content="https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/" /><meta property="og:see_also" content="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/" />
+
+
+
+    <title>
+  A Bit of Git Part 3: Rebase · Marcus Ilgner
+</title>
+
+    
+      <link rel="canonical" href="https://marcusilgner.com/posts/2021-06-03-a-bit-of-git-part-3-rebase/">
+    
+
+    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+    
+
+    <meta name="generator" content="Hugo 0.82.0" />
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2021-06-03-a-bit-of-git-part-3-rebase/">
+              A Bit of Git Part 3: Rebase
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-06-03T14:45:31&#43;02:00'>
+                June 3, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="https://marcusilgner.com/authors/marcus-ilgner-mailmarcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/git/">git</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="a-bit-of-git-each-day---part-3-rebase">
+  A bit of git (each day) - Part 3: Rebase
+  <a class="heading-link" href="#a-bit-of-git-each-day---part-3-rebase">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>Once you are fluent in the use of the basic git commands <code>add</code>, <code>rm</code>,
+<code>checkout</code>, <code>commit</code> and <code>branch</code>, it is time to look at the next most
+important bit of it: <code>rebase</code>.</p>
+<p>In the last excursion on the subject of branching strategies, <code>git rebase</code> was
+mentioned a couple of times so it makes sense to have a closer look at it.
+The most common use case for rebasing of feature branches is to achieve a
+clean, linear history. But I find that I also like to rebase when I know that
+my changes would bring up conflicts with the target branch of my merge request.
+In that scenario, rebase allows me to resolve them myself, making sure that
+the end-result doesn&rsquo;t introduce unexpected behaviour.</p>
+<h2 id="how-it-works">
+  How it works
+  <a class="heading-link" href="#how-it-works">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>In its most simple and straightforward form, <code>git rebase</code> takes one argument
+which points to a commit - also called a <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References"><em>reference</em></a>
+or <em>ref</em> for short.
+This is usually the name of a local branch (i.e. <code>main</code>), a remote branch
+(i.e. <code>origin/main</code>), a relative reference like <code>HEAD~4</code> (a bit dangerous) or
+a specific commit id like <code>a50d31c</code>.
+When started, <code>rebase</code> traverses the graph of commits for the first common
+ancestor of the branch (or commit) you have currently checked out and the
+one given as an argument.</p>
+<p>It then takes all commits from your current branch and, one by one, tries to
+apply the changes from these commits to the target branch.</p>
+<p>At this point, you are likely to encounter merge conflicts from one of your
+commits. Git will stop and give you a chance to resolve these commits. You can
+do this by using a <a href="https://www.git-scm.com/docs/git-mergetool">merge tool</a> or
+via traditional <code>add</code>, <code>checkout</code> and <code>rm</code> subcommands.</p>
+<p>Once the conflicts have been resolved to your liking, <code>git rebase --continue</code>
+will continue with the next commit from your branch.
+Just in case you find that resolving these merge conflicts is more trouble
+than rebasing is worth - i.e. if you&rsquo;re just doing it to get a clean history -
+you can <code>git rebase --abort</code> the process and everything will be in the same
+state as before starting the rebase process. No worries to accidentally break
+something while playing around with rebasing!</p>
+<h2 id="interactive-rebase">
+  Interactive rebase
+  <a class="heading-link" href="#interactive-rebase">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The real power of rebase comes from the interactive mode. If you&rsquo;re really
+interested in producing a well-readable history, this is where the magic lies.</p>
+<p>Instead of just automatically applying all the commits since the last common
+ancestor of your current branch and the target ref, <code>git rebase -i &lt;ref&gt;</code>
+brings up your favourite editor with a pre-filled list of all the identified
+commits.
+By default, they are all prefixed with <code>pick</code>, which, if you just saved and
+closed that file, would result in the same behaviour as a regular rebase.</p>
+<p>But instead of just closing the file, you&rsquo;re free to completely customize the
+behaviour of rebase. The most common commands are:</p>
+<ul>
+<li>if you want to omit a commit from the branch (maybe because it has been
+applied separately - i.e. hotfix - already), just remove the line or add
+<code>drop</code>/<code>d</code> in front</li>
+<li>if you want to merge one of the commits with the preceding one, change <code>pick</code>
+to <code>squash</code>/<code>s</code> (combines the commit messages) or <code>fixup</code>/<code>f</code> (discards the
+commit message from the second commit while applying the changes)</li>
+<li>if you want git to pause rebase so you can edit a commit, use <code>edit</code>/<code>e</code></li>
+<li>sometimes you also might want to reorder commits although this is probably
+not that common a use case&hellip;</li>
+<li>you might want to fix the commit message of a commit that wasn&rsquo;t the last
+one (you can fix these with <code>git commit --amend</code>). Use <code>reword</code>/<code>r</code> as the
+command in front of the commit id</li>
+<li>if you find that the list of commits is somehow not what you expected and
+decide that you rather abort the rebase process before doing anything, just
+remove everything from the file and save it</li>
+</ul>
+<p>There are a few more possibilities and interactive rebase can also be used to
+split commits - but I&rsquo;ll stop here for now as the whole point of the series is
+brevity and I&rsquo;m already stretching things a bit.</p>
+<p>As usual, if you are looking for more in-depth explanations or use cases, I
+encourage you to check out the <a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">official Pro Git book on rebasing</a>.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+<section class="see-also">
+  
+    
+    
+    
+      <h3 id="see-also-in-a-bit-of-git-each-day">
+        See also in A Bit of Git (Each Day)
+        <a class="heading-link" href="#see-also-in-a-bit-of-git-each-day">
+          <i class="fa fa-link" aria-hidden="true"></i>
+        </a>
+      </h3>
+      <nav>
+        <ul>
+        
+        
+          
+        
+          
+            <li>
+              <a href="https://marcusilgner.com/posts/2021-05-30-a-bit-of-git-part-2-branching-strategies/">A Bit of Git Part 2: Branching Strategies</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://marcusilgner.com/posts/2021-05-29-a-bit-of-git-part-1/">A Bit of Git Part 1</a>
+            </li>
+          
+        
+        </ul>
+      </nav>
+    
+  
+</section>
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "marcusilgner" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2018 -
+        
+        2021
+         Marcus Ilgner 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://marcusilgner.com/js/coder.min.235666b114443867d43eeb5799d51f6252965e5163f338285e113fa381d3d27e.js" integrity="sha256-I1ZmsRREOGfUPutXmdUfYlKWXlFj8zgoXhE/o4HT0n4="></script>
+    
+
+    
+      <script src="https://marcusilgner.com/scripts/mermaid.min.js"></script>
+    
+      <script src="https://marcusilgner.com/scripts/init.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
