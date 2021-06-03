@@ -31,10 +31,10 @@ canonifyurls = true
 
 
   # Custom CSS
-  custom_css = ["custom.css"]
+  # customCSS = ["custom.css"]
   
   # Custom JS
-  custom_js = []
+  customJS = ["scripts/mermaid.min.js", "scripts/init.js"]
 
 [[params.social]]
     name = "Github"
