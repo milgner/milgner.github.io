@@ -4,7 +4,7 @@ title = "Marcus Ilgner"
 theme = "hugo-coder"
 enableEmoji = true
 
-disqusShortname = "marcusilgner"
+# disqusShortname = "marcusilgner"
 
 pygmentsstyle = "monokai"
 pygmentscodefences = true
@@ -56,11 +56,6 @@ canonifyurls = true
     icon = "fa fa-linkedin fa-2x"
     weight = 4
     url = "https://www.linkedin.com/in/marcus-ilgner-32aaa81b2/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fa fa-twitter fa-2x"
-    weight = 5
-    url = "https://twitter.com/LambdaAbstract"
 
 [[menu.main]]
     name = "Blog"
