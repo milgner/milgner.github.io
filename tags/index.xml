@@ -1,1 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Marcus Ilgner</title><link>https://marcusilgner.com/tags/</link><description>Recent content in Tags on Marcus Ilgner</description><generator>Hugo -- gohugo.io</generator><language>en-uk</language><lastBuildDate>Tue, 03 May 2022 08:48:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>ruby</title><link>https://marcusilgner.com/tags/ruby/</link><pubDate>Tue, 03 May 2022 08:48:10 +0200</pubDate><guid>https://marcusilgner.com/tags/ruby/</guid><description/></item><item><title>arc42</title><link>https://marcusilgner.com/tags/arc42/</link><pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate><guid>https://marcusilgner.com/tags/arc42/</guid><description/></item><item><title>Documentation</title><link>https://marcusilgner.com/tags/documentation/</link><pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate><guid>https://marcusilgner.com/tags/documentation/</guid><description/></item><item><title>Gradle</title><link>https://marcusilgner.com/tags/gradle/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/tags/gradle/</guid><description/></item><item><title>Kotlin</title><link>https://marcusilgner.com/tags/kotlin/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/tags/kotlin/</guid><description/></item><item><title>Vert.x</title><link>https://marcusilgner.com/tags/vert.x/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/tags/vert.x/</guid><description/></item><item><title>Vue 3</title><link>https://marcusilgner.com/tags/vue-3/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/tags/vue-3/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/tags/</link>
+    <description>Recent content in Tags on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Wed, 04 May 2022 01:06:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ruby</title>
+      <link>https://marcusilgner.com/tags/ruby/</link>
+      <pubDate>Wed, 04 May 2022 01:06:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/ruby/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arc42</title>
+      <link>https://marcusilgner.com/tags/arc42/</link>
+      <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/arc42/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Documentation</title>
+      <link>https://marcusilgner.com/tags/documentation/</link>
+      <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/documentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gradle</title>
+      <link>https://marcusilgner.com/tags/gradle/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>https://marcusilgner.com/tags/kotlin/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vert.x</title>
+      <link>https://marcusilgner.com/tags/vert.x/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/vert.x/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue 3</title>
+      <link>https://marcusilgner.com/tags/vue-3/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/tags/vue-3/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

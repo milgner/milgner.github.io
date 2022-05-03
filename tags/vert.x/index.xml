@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vert.x on Marcus Ilgner</title><link>https://marcusilgner.com/tags/vert.x/</link><description>Recent content in Vert.x on Marcus Ilgner</description><generator>Hugo -- gohugo.io</generator><language>en-uk</language><lastBuildDate>Mon, 05 Apr 2021 13:31:04 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/vert.x/index.xml" rel="self" type="application/rss+xml"/><item><title>Deploy a Vert.x app with an embedded SPA</title><link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid><description>Deploy a Vert.x application with an embedded SPA As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
-Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vert.x on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/tags/vert.x/</link>
+    <description>Recent content in Vert.x on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Mon, 05 Apr 2021 13:31:04 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/vert.x/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deploy a Vert.x app with an embedded SPA</title>
+      <link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid>
+      <description>Deploy a Vert.x application with an embedded SPA    As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
+Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description>
+    </item>
+    
+  </channel>
+</rss>

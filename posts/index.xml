@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Marcus Ilgner</title><link>https://marcusilgner.com/posts/</link><description>Recent content in Posts on Marcus Ilgner</description><generator>Hugo -- gohugo.io</generator><language>en-uk</language><lastBuildDate>Tue, 03 May 2022 08:48:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Idiomatic Coding: Ruby Hash (&amp; Python Dict)</title><link>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</link><pubDate>Tue, 03 May 2022 08:48:10 +0200</pubDate><guid>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</guid><description>Idiomatic Ruby: Hash vs class It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.
-As such, I am often dismayed when reading code from untyped interpreted languages. Sure, there are classes in Javascript, Ruby and Python. But very often I find that they&amp;rsquo;re eschewed in favour of just bundling a list of attributes together in an untyped Object, Hash or Dict respectively.</description></item><item><title>Wikis aren't meant for software documentation</title><link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link><pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate><guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid><description>Wikis aren&amp;rsquo;t meant for software documentation &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
-If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description></item><item><title>Deploy a Vert.x app with an embedded SPA</title><link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link><pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate><guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid><description>Deploy a Vert.x application with an embedded SPA As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
-Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/posts/</link>
+    <description>Recent content in Posts on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Wed, 04 May 2022 01:06:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rails Value Objects</title>
+      <link>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</link>
+      <pubDate>Wed, 04 May 2022 01:06:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</guid>
+      <description>Value Objects in Rails    While writing yesterdays post about the usage of Hash vs class, I couldn&amp;rsquo;t help but think of another powerful tool that helps us to build a well-defined model of our problem domain in the programming language of our choice: the value object.
+To understand the value of value objects (scnr), let&amp;rsquo;s take an example: 42. &amp;ldquo;What is 42?&amp;rdquo;, you might be tempted to ask - and rightfully so.</description>
+    </item>
+    
+    <item>
+      <title>Idiomatic Coding: Ruby Hash (&amp; Python Dict)</title>
+      <link>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</link>
+      <pubDate>Tue, 03 May 2022 08:48:10 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</guid>
+      <description>Idiomatic Ruby: Hash vs class    It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.
+As such, I am often dismayed when reading code from untyped interpreted languages. Sure, there are classes in Javascript, Ruby and Python. But very often I find that they&amp;rsquo;re eschewed in favour of just bundling a list of attributes together in an untyped Object, Hash or Dict respectively.</description>
+    </item>
+    
+    <item>
+      <title>Wikis aren&#39;t meant for software documentation</title>
+      <link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link>
+      <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid>
+      <description>Wikis aren&amp;rsquo;t meant for software documentation     &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
+If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description>
+    </item>
+    
+    <item>
+      <title>Deploy a Vert.x app with an embedded SPA</title>
+      <link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link>
+      <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid>
+      <description>Deploy a Vert.x application with an embedded SPA    As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
+Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description>
+    </item>
+    
+  </channel>
+</rss>

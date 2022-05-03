@@ -1,2 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Documentation on Marcus Ilgner</title><link>https://marcusilgner.com/tags/documentation/</link><description>Recent content in Documentation on Marcus Ilgner</description><generator>Hugo -- gohugo.io</generator><language>en-uk</language><lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/documentation/index.xml" rel="self" type="application/rss+xml"/><item><title>Wikis aren't meant for software documentation</title><link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link><pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate><guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid><description>Wikis aren&amp;rsquo;t meant for software documentation &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
-If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/tags/documentation/</link>
+    <description>Recent content in Documentation on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wikis aren&#39;t meant for software documentation</title>
+      <link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link>
+      <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid>
+      <description>Wikis aren&amp;rsquo;t meant for software documentation     &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
+If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description>
+    </item>
+    
+  </channel>
+</rss>
