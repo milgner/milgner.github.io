@@ -6,7 +6,17 @@
     <description>Recent content on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 04 May 2022 01:06:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 May 2022 21:00:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s talk about Pet Projects</title>
+      <link>https://marcusilgner.com/posts/2022-05-18-pet-projects/</link>
+      <pubDate>Wed, 18 May 2022 21:00:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-05-18-pet-projects/</guid>
+      <description>Let&amp;rsquo;s talk about pet projects    In many years reviewing job applications from software developers, one topic has come up as surprisingly controversial time and again: pet projects, i.e. projects that developers work on on their own time. So let&amp;rsquo;s have a look and see what the fuzz is all about.
+From the employers perspective    First, let&amp;rsquo;s look at it from the employers perspective. A colleague of mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to tile a roof in their free time, would you?</description>
+    </item>
+    
     <item>
       <title>Rails Value Objects</title>
       <link>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</link>
