@@ -6,14 +6,25 @@
     <description>Recent content in Posts on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 09 Jun 2022 22:05:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jul 2022 19:56:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Importance of Clean Code for Agile Teams</title>
+      <link>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</link>
+      <pubDate>Thu, 07 Jul 2022 19:56:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</guid>
+      <description>The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
+Now the question automatically arises: should we merge it or give it a bit of love and clean it up?</description>
+    </item>
+    
     <item>
       <title>Becoming a better developer</title>
       <link>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</link>
       <pubDate>Thu, 09 Jun 2022 22:05:00 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</guid>
-      <description>Programming isn&amp;rsquo;t software development    While it might be obvious to many or most people, it nonetheless needs to be said sometimes. But before getting to the interesting part about how to move from programming to software development and how to become better at that, let&amp;rsquo;s start with an example of what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s use a completely ludicrous, over-the-top example 🤪</description>
+      <description>Programming isn&amp;rsquo;t software development While it might be obvious to many or most people, it nonetheless needs to be said sometimes. But before getting to the interesting part about how to move from programming to software development and how to become better at that, let&amp;rsquo;s start with an example of what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s use a completely ludicrous, over-the-top example 🤪
+Programmer&amp;rsquo;s approach to solving tickets Let&amp;rsquo;s say your team is planning to build a Pomodoro-related app.</description>
     </item>
     
     <item>
@@ -22,8 +33,8 @@
       <pubDate>Wed, 18 May 2022 21:00:00 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2022-05-18-pet-projects/</guid>
-      <description>Let&amp;rsquo;s talk about pet projects    In many years reviewing job applications from software developers, one topic has come up as surprisingly controversial time and again: pet projects, i.e. projects that developers work on on their own time. So let&amp;rsquo;s have a look and see what the fuzz is all about.
-From the employers perspective    First, let&amp;rsquo;s look at it from the employers perspective. A colleague of mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to tile a roof in their free time, would you?</description>
+      <description>Let&amp;rsquo;s talk about pet projects In many years reviewing job applications from software developers, one topic has come up as surprisingly controversial time and again: pet projects, i.e. projects that developers work on on their own time. So let&amp;rsquo;s have a look and see what the fuzz is all about.
+From the employers perspective First, let&amp;rsquo;s look at it from the employers perspective. A colleague of mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to tile a roof in their free time, would you?</description>
     </item>
     
     <item>
@@ -32,7 +43,7 @@ From the employers perspective    First, let&amp;rsquo;s look at it from the emp
       <pubDate>Wed, 04 May 2022 01:06:00 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</guid>
-      <description>Value Objects in Rails    While writing yesterdays post about the usage of Hash vs class, I couldn&amp;rsquo;t help but think of another powerful tool that helps us to build a well-defined model of our problem domain in the programming language of our choice: the value object.
+      <description>Value Objects in Rails While writing yesterdays post about the usage of Hash vs class, I couldn&amp;rsquo;t help but think of another powerful tool that helps us to build a well-defined model of our problem domain in the programming language of our choice: the value object.
 To understand the value of value objects (scnr), let&amp;rsquo;s take an example: 42. &amp;ldquo;What is 42?&amp;rdquo;, you might be tempted to ask - and rightfully so.</description>
     </item>
     
@@ -42,7 +53,7 @@ To understand the value of value objects (scnr), let&amp;rsquo;s take an example
       <pubDate>Tue, 03 May 2022 08:48:10 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</guid>
-      <description>Idiomatic Ruby: Hash vs class    It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.
+      <description>Idiomatic Ruby: Hash vs class It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.
 As such, I am often dismayed when reading code from untyped interpreted languages. Sure, there are classes in Javascript, Ruby and Python. But very often I find that they&amp;rsquo;re eschewed in favour of just bundling a list of attributes together in an untyped Object, Hash or Dict respectively.</description>
     </item>
     
@@ -52,7 +63,8 @@ As such, I am often dismayed when reading code from untyped interpreted language
       <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid>
-      <description>Wikis aren&amp;rsquo;t meant for software documentation     &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
+      <description>Wikis aren&amp;rsquo;t meant for software documentation &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway
+Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
 If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description>
     </item>
     
@@ -62,7 +74,7 @@ If you know your project is going to be scrapped in 2 months time, feel free to 
       <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
       
       <guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid>
-      <description>Deploy a Vert.x application with an embedded SPA    As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
+      <description>Deploy a Vert.x application with an embedded SPA As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
 Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description>
     </item>
     

@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://marcusilgner.com/</loc>
+    <lastmod>2022-07-07T19:56:00+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/</loc>
+    <lastmod>2022-07-07T19:56:00+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/software-craftsmanship/</loc>
+    <lastmod>2022-07-07T19:56:00+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/tags/</loc>
+    <lastmod>2022-07-07T19:56:00+02:00</lastmod>
+  </url><url>
+    <loc>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</loc>
+    <lastmod>2022-07-07T19:56:00+02:00</lastmod>
+  </url><url>
     <loc>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</loc>
     <lastmod>2022-06-09T22:05:00+02:00</lastmod>
   </url><url>
     <loc>https://marcusilgner.com/tags/career/</loc>
-    <lastmod>2022-06-09T22:05:00+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/</loc>
-    <lastmod>2022-06-09T22:05:00+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/posts/</loc>
-    <lastmod>2022-06-09T22:05:00+02:00</lastmod>
-  </url><url>
-    <loc>https://marcusilgner.com/tags/</loc>
     <lastmod>2022-06-09T22:05:00+02:00</lastmod>
   </url><url>
     <loc>https://marcusilgner.com/posts/2022-05-18-pet-projects/</loc>
