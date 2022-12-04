@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>industry on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/tags/industry/</link>
+    <description>Recent content in industry on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sun, 04 Dec 2022 13:32:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/industry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 things I learned from 18 months with OPC UA</title>
+      <link>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</link>
+      <pubDate>Sun, 04 Dec 2022 13:32:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</guid>
+      <description>5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join).</description>
+    </item>
+    
+  </channel>
+</rss>

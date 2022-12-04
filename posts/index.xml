@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 07 Jul 2022 19:56:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Dec 2022 13:32:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 things I learned from 18 months with OPC UA</title>
+      <link>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</link>
+      <pubDate>Sun, 04 Dec 2022 13:32:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</guid>
+      <description>5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join).</description>
+    </item>
+    
     <item>
       <title>The Importance of Clean Code for Agile Teams</title>
       <link>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</link>

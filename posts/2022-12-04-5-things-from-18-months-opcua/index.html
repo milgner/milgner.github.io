@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Marcus Ilgner">
+    <meta name="description" content="5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join).">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="5 things I learned from 18 months with OPC UA"/>
+<meta name="twitter:description" content="5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join)."/>
+
+    <meta property="og:title" content="5 things I learned from 18 months with OPC UA" />
+<meta property="og:description" content="5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-04T13:32:00+02:00" />
+<meta property="article:modified_time" content="2022-12-04T13:32:00+02:00" />
+
+
+
+    <title>
+  5 things I learned from 18 months with OPC UA · Marcus Ilgner
+</title>
+
+    
+      <link rel="canonical" href="https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/">
+    
+
+    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+    
+
+    <meta name="generator" content="Hugo 0.105.0">
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/">
+              5 things I learned from 18 months with OPC UA
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2022-12-04T13:32:00&#43;02:00'>
+                December 4, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              8-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="https://marcusilgner.com/authors/marcus-ilgner-mailmarcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/opcua/">opcua</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/industry/">industry</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="5-things-i-learned-from-18-months-with-opc-ua">
+  5 Things I learned from 18 months with OPC UA
+  <a class="heading-link" href="#5-things-i-learned-from-18-months-with-opc-ua">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>Although it feels like a much longer time, it was in May 2021 that I joined <a href="https://www.re-digital.io/">the team at RE:</a>. Now, 18 months later, it feels like a good time for a recap. I&rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join). Overall it is probably fair to say that software development in this industry works differently from &ldquo;regular&rdquo;, or &ldquo;digital-only&rdquo; software.</p>
+<h2 id="a-short-primer-what-is-opc-ua">
+  A short primer: what is OPC UA?
+  <a class="heading-link" href="#a-short-primer-what-is-opc-ua">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The electronical part of industrial machinery consists of a number of so-called <a href="https://en.wikipedia.org/wiki/Programmable_logic_controller">PLCs</a> which provide real-time I/O to the sensors, motors and other parts of the machine. They have very specialised responsibilities and in order to keep them affordable, usually don&rsquo;t have that many resources beyond what they need for their core I/O control capabilities. This part is often called &ldquo;OT&rdquo; (Operational Technology) to differentiate it from traditional IT.</p>
+<p>Communication with these PLCs used to happen via very specialised protocols optimised for bandwidth and low processing complexity. Some of them don&rsquo;t even use TCP but lower levels of the ISO layers; even going so far as to require dedicated wiring for their message bus (i.e. CAN). Some of them are proprietary (like the S7comm protocol used by Siemens), some are open (like Modbus and its Modbus over TCP variant).</p>
+<p>One thing most (or all?) of them lack, is an <em>information model</em>: even though it&rsquo;s possible to read a variable on the PLC if one knows its address and datatype, there is no built-in mechanism to structure the variable data and one requires external, out-of-band information to access these systems.</p>
+<p>Although it also touches on a plethora of different aspects - more on this later -, the primary drivers for adoption of OPC UA in the industry are the open availability of its specification and  its capability to provide both modelling and reflection for the data in the PLC.</p>
+<h2 id="what-i-learned-1-opc-ua-is-highly-complex-and-few-people-understand-it">
+  What I learned #1: OPC UA is highly complex and few people understand it
+  <a class="heading-link" href="#what-i-learned-1-opc-ua-is-highly-complex-and-few-people-understand-it">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Besides providing an information model, OPC UA also tries to address a couple of other aspects. Unfortunately, its high flexibility and aspirations also make it hard to grasp. Even after reading most and re-reading some of the very extensive specification and documentation, fixing bugs in both client and server libraries and even starting to write my own client library, there are still many important details that I find myself having to look up on demand.</p>
+<p>And yes, all the OPC UA implementations that I have worked with so far had bugs. Some very prominent, some which could be worked-around; but overall it doesn&rsquo;t feel like a solid foundation when one pulls in a supposedly widely-used library just to stumble over an issue after only two days of working with it. Unfortunately for people coming from &ldquo;classical&rdquo; software development, there&rsquo;s no official BNF notation of the UA protocol and implementors have to rely on interpreting a lot of prose text, jumping back and forth between different parts to get things right, leading to aforementioned issues.</p>
+<p>Furthermore, most PLCs are extremely taxed when running a protocol which seems to have been designed with desktop and server systems in mind (i.e. PLCs usually doesn&rsquo;t have AES NI in their CPUs). This reduces throughput and renders the task of consistently reading the state of the PLC into a digital twin very challenging.</p>
+<div class="notice question">
+  <div class="notice-title">
+    <i class="fa fa-question" aria-hidden="true"></i>Quo vadis, opc ua fx
+  </div>
+  <div class="notice-content">Supposedly there is a variant of OPC UA, called OPC UA Field eXchange, which has less overhead and is targeted towards better performance for running on PLCs. It was <a href="https://opcconnect.opcfoundation.org/2021/06/opc-ua-fx-field-exchange-release-candidate-1-completed/">announced last year</a> to have reached release candidate status. However, when speaking with colleagues in the industry at <a href="https://www.k-online.com/">K 2022</a> it looked like no one was actually aware of it.</div>
+</div>
+
+<p>Also, I often feel like having read the actual specification is quite rare, so when using native terminology like <em>ExtensionObject</em>, <em>DataValue</em> and <em>ReadValueId</em>, I often get the feeling that others don&rsquo;t really know what I&rsquo;m talking about 🙈.</p>
+<h2 id="what-i-learned-2-no-one-uses-namespace-modelling">
+  What I learned #2: no one uses namespace modelling
+  <a class="heading-link" href="#what-i-learned-2-no-one-uses-namespace-modelling">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>As mentioned, the biggest feature of OPC UA is its capability to provide an information model: similar to <a href="http://json-schema.org/">JSON Schema</a>, one can define the structure of ones data, including data types, and share that definition across many PLCs. These definitions are grouped into namespaces, allowing OPC UA servers to pull in schema definitions from multiple locations.</p>
+<p>There are valiant efforts underway at <a href="https://www.euromap.org">EUROMAP</a> to standardize the schemas used in various industries. But unfortunately, due to multiple factors, adoption is still in its infancy. For one, there are usually some vendor- or even machine-specific attributes that, when missing, require additional effort to integrate with the standard. And secondly, with only a small number of applications that can make use of a unified information model, the considerable overhead required for its implementation isn&rsquo;t bound to yield any ROI in the short and mid-term.</p>
+<p>For the most part, OPC UA nodes with machine data are just put into the namespace <code>ns=1</code> which contains the local namespace of each UA server.</p>
+<div class="notice tip">
+  <div class="notice-title">
+    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>Clearly communicating node identifiers
+  </div>
+  <div class="notice-content">When using namespaces, make sure to communicate node identifiers using URLs instead of numeric namespace identifiers. The node identifier <code>ns=2;i=5001</code> could refer to any number of things - but when specifying it as <code>nsu=http://opcfoundation.org/UA/DI/;i=5001</code>, it is clear that it&rsquo;s meant to refer to the <a href="https://reference.opcfoundation.org/nodesets/3/17529">DeviceSet</a> node of the Device Model specification. The numeric namespace identifier is allowed to change and vary across systems, but the URL is guaranteed to be stable.</div>
+</div>
+
+<p>All in all, the UA server&rsquo;s information model is mostly used for reflection, i.e. inspecting (a.k.a. &ldquo;browsing&rdquo;) the list of available nodes after the fact.</p>
+<h2 id="what-i-learned-3-no-one-uses-operation-limits--getting-message-sizes-right-is-hard">
+  What I learned #3: no one uses operation limits &amp; getting message sizes right is hard
+  <a class="heading-link" href="#what-i-learned-3-no-one-uses-operation-limits--getting-message-sizes-right-is-hard">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Another concept which would be very useful when used correctly, are <em>operation limits</em>. These describe <a href="https://reference.opcfoundation.org/v104/Core/docs/Part5/6.3.11/">a list of restrictions</a> that clients should adhere to when &ldquo;talking to&rdquo; the UA server. Unfortunately, most UA servers either don&rsquo;t even include the corresponding node in their schema or provide bogus values like <code>65536</code> for all of these items - only to croak when the number of <code>ReadValueId</code>s goes beyond ~90.</p>
+<p>What&rsquo;s more: these parameters are tied into the maximum message size which is negotiated when establishing the UA connection. Unfortunately, it is not unusual to encounter setups where one sends a request to the <code>Read</code> service with 200 <code>ReadValueId</code>s, only to receive an error <code>Bad_ResponseTooLarge</code> because the server finds itself unable to encode the response into the negotiated message size, even if the operation limits are not violated.</p>
+<h2 id="what-i-learned-4-subscriptions-are-usually-just-rpc">
+  What I learned #4: subscriptions are usually just RPC
+  <a class="heading-link" href="#what-i-learned-4-subscriptions-are-usually-just-rpc">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>As it turns out, OPC UA has <a href="https://reference.opcfoundation.org/Core/Part14/v105/docs/B">two concepts called &ldquo;PubSub&rdquo;</a>: in the regular client-server constellation which most setups use, the client will create the subscription on the server and then regularly poll the server for changes using the ID of the subscription.</p>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content">Even though client and server do a handshake on the polling intervals when setting up the subscription, actual PLCs have to cope with varying workloads and should not be expected to adhere to the parameters exchanged in the initial setup phase. Instead, clients should expect to receive <code>BadTooManyPublishRequests</code>, <code>GoodOverload</code> and/or <code>BadTcpNotEnoughResources</code> in their responses and dynamically adjust their polling intervals.</div>
+</div>
+
+<p>Only the second mode follows &ldquo;traditional&rdquo; pub-sub data flows, where the server independently announces changes in data through a messaging middleware. While this would be highly advantegous to use, I unfortunately have yet to encounter it in an actual system.</p>
+<h2 id="what-i-learned-5-opc-ua-gives-you-a-big-gun-and-does-not-care-whether-you-shoot-your-own-feet">
+  What I learned #5: OPC UA gives you a big gun and does not care whether you shoot your own feet
+  <a class="heading-link" href="#what-i-learned-5-opc-ua-gives-you-a-big-gun-and-does-not-care-whether-you-shoot-your-own-feet">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Continuing with the information model: OPC UA client UIs usually display the available nodes in the form of a tree. This easy but also very misleading: although nodes and node references make up a directed graph, this graph not specified as being acyclic. It would be a perfectly valid UA setup to have cyclic references in your graph. So any client library will have to take care not to run into infinite loops when programmatically discovering the nodeset. Also, nodes may be linked into the graph any number of times (including 0).</p>
+<p>Another tripwire is the type system. Besides allowing custom data structures through ExtensionObjects, which provide challenges to clients that use typed programming languages, OPC UA also allows subclassing other, built-in data types. This can lead to confusing scenarios like <a href="https://support.industry.siemens.com/cs/document/109780313/">Siemens defining their own numeric and string types</a> as subclasses of the original, built-in datatypes.</p>
+<p>Without going into more detail, there is a plethora of things to configure and as a consequence, many things to get wrong. Often, changes made to get something working quickly have potential to get bite ones behind a few months down the line.</p>
+<h2 id="in-summary">
+  In summary
+  <a class="heading-link" href="#in-summary">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>All in all it can probably be said that OPC UA provides enough functionality that it&rsquo;s the future of industry communication protocols. But it&rsquo;s an arduous journey which will continue to provide hardship to developers and implementors for a number of years to come.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2018 -
+        
+        2022
+         Marcus Ilgner 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://marcusilgner.com/js/coder.min.978ac2219b08e24e68c3f3eada8d99add50d9d997ce3861354b602cc94f75f30.js" integrity="sha256-l4rCIZsI4k5ow/Pq2o2ZrdUNnZl844YTVLYCzJT3XzA="></script>
+    
+
+    
+      <script src="https://marcusilgner.com/scripts/mermaid.min.js"></script>
+    
+      <script src="https://marcusilgner.com/scripts/init.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
