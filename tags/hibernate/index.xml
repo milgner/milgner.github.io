@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hibernate on Marcus Ilgner</title>
+    <link>https://marcusilgner.com/tags/hibernate/</link>
+    <description>Recent content in hibernate on Marcus Ilgner</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Tue, 21 Feb 2023 17:16:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/hibernate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hibernate Initialisation without XML</title>
+      <link>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</link>
+      <pubDate>Tue, 21 Feb 2023 17:16:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</guid>
+      <description>Hibernate Initialisation without XML While working on some R&amp;amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy.</description>
+    </item>
+    
+  </channel>
+</rss>

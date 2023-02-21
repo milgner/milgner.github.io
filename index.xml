@@ -6,7 +6,17 @@
     <description>Recent content on Marcus Ilgner</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 04 Dec 2022 13:32:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Feb 2023 17:16:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hibernate Initialisation without XML</title>
+      <link>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</link>
+      <pubDate>Tue, 21 Feb 2023 17:16:00 +0200</pubDate>
+      
+      <guid>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</guid>
+      <description>Hibernate Initialisation without XML While working on some R&amp;amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy.</description>
+    </item>
+    
     <item>
       <title>5 things I learned from 18 months with OPC UA</title>
       <link>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</link>

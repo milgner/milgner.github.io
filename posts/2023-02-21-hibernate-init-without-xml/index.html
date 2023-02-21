@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Marcus Ilgner">
+    <meta name="description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hibernate Initialisation without XML"/>
+<meta name="twitter:description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy."/>
+
+    <meta property="og:title" content="Hibernate Initialisation without XML" />
+<meta property="og:description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-21T17:16:00+02:00" />
+<meta property="article:modified_time" content="2023-02-21T17:16:00+02:00" />
+
+
+
+    <title>
+  Hibernate Initialisation without XML · Marcus Ilgner
+</title>
+
+    
+      <link rel="canonical" href="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/">
+    
+
+    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+    
+      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
+        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
+    
+
+    <meta name="generator" content="Hugo 0.109.0">
+  </head>
+
+  
+  
+  <body class="preload-transitions colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/">
+              Hibernate Initialisation without XML
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2023-02-21T17:16:00&#43;02:00'>
+                February 21, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          <div class="authors">
+    <i class="fa fa-user" aria-hidden="true"></i>
+      <a href="https://marcusilgner.com/authors/marcus-ilgner-mail@marcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/hibernate/">hibernate</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/java/">java</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="hibernate-initialisation-without-xml">
+  Hibernate Initialisation without XML
+  <a class="heading-link" href="#hibernate-initialisation-without-xml">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a <code>persistence.xml</code> file.</p>
+<p>Ultimately this is probably because many developers implicitly
+assume that ones JPA persistence unit will ultimately be managed
+by an application server. But for small containerised
+applications without application server, having multiple
+mechanisms to configure the application - i.e. <code>persistence.xml</code>
+and whatever native mechanism one prefers - is extremely unwieldy.
+As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.</p>
+<p>I was surprised that even web-searches like &ldquo;Hibernate without
+persistence.xml&rdquo; turned out quite unhelpful.
+So I finally ended up looking into <a href="https://github.com/hibernate/hibernate-reactive/blob/1.1.9/hibernate-reactive-core/src/test/java/org/hibernate/reactive/BaseReactiveTest.java">integration tests of Hibernate</a> to find out how this might work. And to top things off, it is extremely straightforward to do, too.</p>
+<p>In this code, configuration is pulled from a <a href="https://vertx.io/docs/vertx-config/java/">Vert.x configuration object</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>    <span style="color:#66d9ef">lateinit</span> <span style="color:#66d9ef">var</span> jdbcConfig: JdbcConfig
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// can&#39;t be `by lazy` because it needs to be `suspend`
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">suspend</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">initializeDatabaseConfiguration</span>() {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Boot<span style="color:#f92672">::</span>jdbcConfig.isInitialized) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> config = configRetriever.config.await()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> dbConfig = config.getJsonObject(<span style="color:#e6db74">&#34;database&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> url = dbConfig.getString(<span style="color:#e6db74">&#34;url&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> username = dbConfig.getString(<span style="color:#e6db74">&#34;username&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> password = dbConfig.getString(<span style="color:#e6db74">&#34;password&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        jdbcConfig = JdbcConfig(<span style="color:#e6db74">&#34;jdbc:</span><span style="color:#e6db74">$url</span><span style="color:#e6db74">&#34;</span>, username, password)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>Now that this information is there, Hibernate can be set up.
+Here I&rsquo;m looking into <a href="https://hibernate.org/reactive/">Hibernate Reactive</a>, so some custom configuration is required:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">initializeJPA</span>(pluginManager: PluginManager): SessionFactory {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> configuration = Configuration()
+</span></span><span style="display:flex;"><span>        configuration
+</span></span><span style="display:flex;"><span>            .setProperty(
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">Settings</span>.JPA_PERSISTENCE_PROVIDER,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;org.hibernate.reactive.provider.ReactivePersistenceProvider&#34;</span>
+</span></span><span style="display:flex;"><span>            )
+</span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.DIALECT, <span style="color:#e6db74">&#34;org.hibernate.dialect.PostgreSQL10Dialect&#34;</span>)
+</span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.URL, jdbcConfig.url)
+</span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.USER, jdbcConfig.username)
+</span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.PASS, jdbcConfig.password)
+</span></span></code></pre></div><p>Next, one will need to add the entity classes to the configuration, which will probably work a bit differently for each application.
+In this case, I&rsquo;m using <a href="https://pf4j.org/">PF4J</a> and pulling in Hibernate entities from an <a href="https://pf4j.org/doc/extensions.html">ExtensionPoint</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (extension <span style="color:#66d9ef">in</span> pluginManager.getExtensions(HibernateConfiguration<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (clz <span style="color:#66d9ef">in</span> extension.annotatedClasses()) {
+</span></span><span style="display:flex;"><span>                configuration.addAnnotatedClass(clz)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p>Since PF4J creates separate <code>ClassLoader</code>s for each plugin,
+Hibernate needs to be made aware of these through a custom
+<code>ClassLoaderService</code> instance. After that, the configuration
+is ready to be used and the <code>SessionFactory</code> can be instantiated:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> allClassLoaders = mutableListOf(<span style="color:#66d9ef">this</span>.javaClass.classLoader)
+</span></span><span style="display:flex;"><span>            .also { <span style="color:#66d9ef">it</span>.addAll(pluginManager.plugins.map { <span style="color:#66d9ef">it</span>.pluginClassLoader }) }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> classLoaderService = ClassLoaderServiceImpl(allClassLoaders, <span style="color:#a6e22e">TcclLookupPrecedence</span>.BEFORE)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> serviceRegistry = ReactiveServiceRegistryBuilder().addService(
+</span></span><span style="display:flex;"><span>            ClassLoaderService<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java, classLoaderService
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>            .applySettings(configuration.properties)
+</span></span><span style="display:flex;"><span>            .build()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> jpaSessionFactory = configuration.buildSessionFactory(serviceRegistry)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> jpaSessionFactory.unwrap(SessionFactory<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>That&rsquo;s all for now. I&rsquo;ll probably write a separate article about combining Vert.x, PF4J, Hibernate Reactive and <a href="https://kosi-libs.org/kodein/">Kodein</a> soon.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2018 -
+        
+        2023
+         Marcus Ilgner 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://marcusilgner.com/js/coder.min.978ac2219b08e24e68c3f3eada8d99add50d9d997ce3861354b602cc94f75f30.js" integrity="sha256-l4rCIZsI4k5ow/Pq2o2ZrdUNnZl844YTVLYCzJT3XzA="></script>
+    
+
+    
+      <script src="https://marcusilgner.com/scripts/mermaid.min.js"></script>
+    
+      <script src="https://marcusilgner.com/scripts/init.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
