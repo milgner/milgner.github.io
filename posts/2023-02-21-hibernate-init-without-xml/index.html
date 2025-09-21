@@ -1,109 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="color-scheme" content="light dark">
-
-    
-
-    <meta name="author" content="Marcus Ilgner">
-    <meta name="description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
-Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy.">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hibernate Initialisation without XML"/>
-<meta name="twitter:description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
-Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy."/>
-
-    <meta property="og:title" content="Hibernate Initialisation without XML" />
-<meta property="og:description" content="Hibernate Initialisation without XML While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
-Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-21T17:16:00+02:00" />
-<meta property="article:modified_time" content="2023-02-21T17:16:00+02:00" />
-
-
-
-    <title>
+<head>
+  <title>
   Hibernate Initialisation without XML · Marcus Ilgner
 </title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
+
+
+
+<meta name="author" content="Marcus Ilgner">
+<meta name="description" content="
+  Hibernate Initialisation without XML
+  
     
-      <link rel="canonical" href="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/">
-    
+    Link to heading
+  
 
-    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly
+assume that ones JPA persistence unit will ultimately be managed
+by an application server. But for small containerised
+applications without application server, having multiple
+mechanisms to configure the application - i.e. persistence.xml
+and whatever native mechanism one prefers - is extremely unwieldy.
+As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.">
+<meta name="keywords" content="blog,developer,personal">
 
-    
-      
-      
-      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
-    
 
-    
 
-    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hibernate Initialisation without XML">
+  <meta name="twitter:description" content="Hibernate Initialisation without XML Link to heading While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy. As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.">
 
-    
+<meta property="og:url" content="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/">
+  <meta property="og:site_name" content="Marcus Ilgner">
+  <meta property="og:title" content="Hibernate Initialisation without XML">
+  <meta property="og:description" content="Hibernate Initialisation without XML Link to heading While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
+Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy. As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.">
+  <meta property="og:locale" content="en_uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-21T17:16:00+02:00">
+    <meta property="article:modified_time" content="2023-02-21T17:16:00+02:00">
+    <meta property="article:tag" content="Hibernate">
+    <meta property="article:tag" content="Java">
 
-    
 
-    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
 
-    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
 
-    
-      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
-        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
-    
+<link rel="canonical" href="https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/">
 
-    <meta name="generator" content="Hugo 0.109.0">
-  </head>
+
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
 
   
   
-  <body class="preload-transitions colorscheme-light"
-        onload=" twemoji.parse(document.body); "
-  >
-    
+  <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.022594d625780e2edf64581b893d32cb35c11de5d88953ea4ad3c2e45451e214.css" integrity="sha256-AiWU1iV4Di7fZFgbiT0yyzXBHeXYiVPqStPC5FRR4hQ=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://marcusilgner.com/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://marcusilgner.com/site.webmanifest">
+<link rel="mask-icon" href="https://marcusilgner.com/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
     </a>
 </div>
 
 
-    <main class="wrapper">
-      <nav class="navigation">
+  <main class="wrapper">
+    <nav class="navigation">
   <section class="container">
+    
     <a class="navigation-title" href="https://marcusilgner.com/">
       Marcus Ilgner
     </a>
     
+    
       <input type="checkbox" id="menu-toggle" />
       <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
       </label>
       <ul class="navigation-list">
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+              <a class="navigation-link " href="https://marcusilgner.com/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+              <a class="navigation-link " href="https://marcusilgner.com/projects/">Projects</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+              <a class="navigation-link " href="https://marcusilgner.com/about/">About</a>
             </li>
           
         
@@ -114,8 +145,8 @@ Ultimately this is probably because many developers implicitly assume that ones 
 </nav>
 
 
-      <div class="content">
-        
+    <div class="content">
+      
   <section class="container post">
     <article>
       <header>
@@ -129,39 +160,38 @@ Ultimately this is probably because many developers implicitly assume that ones 
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2023-02-21T17:16:00&#43;02:00'>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-02-21T17:16:00&#43;02:00">
                 February 21, 2023
               </time>
             </span>
             <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
               2-minute read
             </span>
           </div>
-          <div class="authors">
-    <i class="fa fa-user" aria-hidden="true"></i>
-      <a href="https://marcusilgner.com/authors/marcus-ilgner-mail@marcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
           
           <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="https://marcusilgner.com/tags/hibernate/">hibernate</a>
+      <a href="https://marcusilgner.com/tags/hibernate/">Hibernate</a>
     </span>
       <span class="separator">•</span>
     <span class="tag">
-      <a href="https://marcusilgner.com/tags/java/">java</a>
+      <a href="https://marcusilgner.com/tags/java/">Java</a>
     </span></div>
 
         </div>
       </header>
 
-      <div>
+      <div class="post-content">
         
         <h1 id="hibernate-initialisation-without-xml">
   Hibernate Initialisation without XML
   <a class="heading-link" href="#hibernate-initialisation-without-xml">
-    <i class="fa fa-link" aria-hidden="true"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
   </a>
 </h1>
 <p>While working on some R&amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a <code>persistence.xml</code> file.</p>
@@ -174,8 +204,8 @@ and whatever native mechanism one prefers - is extremely unwieldy.
 As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.</p>
 <p>I was surprised that even web-searches like &ldquo;Hibernate without
 persistence.xml&rdquo; turned out quite unhelpful.
-So I finally ended up looking into <a href="https://github.com/hibernate/hibernate-reactive/blob/1.1.9/hibernate-reactive-core/src/test/java/org/hibernate/reactive/BaseReactiveTest.java">integration tests of Hibernate</a> to find out how this might work. And to top things off, it is extremely straightforward to do, too.</p>
-<p>In this code, configuration is pulled from a <a href="https://vertx.io/docs/vertx-config/java/">Vert.x configuration object</a>.</p>
+So I finally ended up looking into <a href="https://github.com/hibernate/hibernate-reactive/blob/1.1.9/hibernate-reactive-core/src/test/java/org/hibernate/reactive/BaseReactiveTest.java"  class="external-link" target="_blank" rel="noopener">integration tests of Hibernate</a> to find out how this might work. And to top things off, it is extremely straightforward to do, too.</p>
+<p>In this code, configuration is pulled from a <a href="https://vertx.io/docs/vertx-config/java/"  class="external-link" target="_blank" rel="noopener">Vert.x configuration object</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>    <span style="color:#66d9ef">lateinit</span> <span style="color:#66d9ef">var</span> jdbcConfig: JdbcConfig
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e">// can&#39;t be `by lazy` because it needs to be `suspend`
@@ -193,7 +223,7 @@ So I finally ended up looking into <a href="https://github.com/hibernate/hiberna
 </span></span><span style="display:flex;"><span>        jdbcConfig = JdbcConfig(<span style="color:#e6db74">&#34;jdbc:</span><span style="color:#e6db74">$url</span><span style="color:#e6db74">&#34;</span>, username, password)
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><p>Now that this information is there, Hibernate can be set up.
-Here I&rsquo;m looking into <a href="https://hibernate.org/reactive/">Hibernate Reactive</a>, so some custom configuration is required:</p>
+Here I&rsquo;m looking into <a href="https://hibernate.org/reactive/"  class="external-link" target="_blank" rel="noopener">Hibernate Reactive</a>, so some custom configuration is required:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">initializeJPA</span>(pluginManager: PluginManager): SessionFactory {
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> configuration = Configuration()
 </span></span><span style="display:flex;"><span>        configuration
@@ -206,7 +236,7 @@ Here I&rsquo;m looking into <a href="https://hibernate.org/reactive/">Hibernate 
 </span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.USER, jdbcConfig.username)
 </span></span><span style="display:flex;"><span>            .setProperty(<span style="color:#a6e22e">Settings</span>.PASS, jdbcConfig.password)
 </span></span></code></pre></div><p>Next, one will need to add the entity classes to the configuration, which will probably work a bit differently for each application.
-In this case, I&rsquo;m using <a href="https://pf4j.org/">PF4J</a> and pulling in Hibernate entities from an <a href="https://pf4j.org/doc/extensions.html">ExtensionPoint</a>.</p>
+In this case, I&rsquo;m using <a href="https://pf4j.org/"  class="external-link" target="_blank" rel="noopener">PF4J</a> and pulling in Hibernate entities from an <a href="https://pf4j.org/doc/extensions.html"  class="external-link" target="_blank" rel="noopener">ExtensionPoint</a>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span> (extension <span style="color:#66d9ef">in</span> pluginManager.getExtensions(HibernateConfiguration<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)) {
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span> (clz <span style="color:#66d9ef">in</span> extension.annotatedClasses()) {
 </span></span><span style="display:flex;"><span>                configuration.addAnnotatedClass(clz)
@@ -227,7 +257,7 @@ is ready to be used and the <code>SessionFactory</code> can be instantiated:</p>
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">val</span> jpaSessionFactory = configuration.buildSessionFactory(serviceRegistry)
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> jpaSessionFactory.unwrap(SessionFactory<span style="color:#f92672">::</span><span style="color:#66d9ef">class</span>.java)
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p>That&rsquo;s all for now. I&rsquo;ll probably write a separate article about combining Vert.x, PF4J, Hibernate Reactive and <a href="https://kosi-libs.org/kodein/">Kodein</a> soon.</p>
+</span></span></code></pre></div><p>That&rsquo;s all for now. I&rsquo;ll probably write a separate article about combining Vert.x, PF4J, Hibernate Reactive and <a href="https://kosi-libs.org/kodein/"  class="external-link" target="_blank" rel="noopener">Kodein</a> soon.</p>
 
       </div>
 
@@ -239,61 +269,79 @@ is ready to be used and the <code>SessionFactory</code> can be instantiated:</p>
         
         
         
+        
+        
+        
+        
       </footer>
     </article>
 
     
   </section>
 
-      </div>
+    </div>
 
-      
-  <footer class="footer">
-    <section class="container">
-      
-      
-        ©
-        
-          2018 -
-        
-        2023
-         Marcus Ilgner 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-
-    </main>
-
+    <footer class="footer">
+  <section class="container">
+    ©
     
-      
-      <script src="https://marcusilgner.com/js/coder.min.978ac2219b08e24e68c3f3eada8d99add50d9d997ce3861354b602cc94f75f30.js" integrity="sha256-l4rCIZsI4k5ow/Pq2o2ZrdUNnZl844YTVLYCzJT3XzA="></script>
+      2018 -
     
+    2025
+     Marcus Ilgner 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
 
-    
-      <script src="https://marcusilgner.com/scripts/mermaid.min.js"></script>
-    
-      <script src="https://marcusilgner.com/scripts/init.js"></script>
-    
+  </main>
 
-    
+  
 
-    
+  
+  
+  <script src="https://marcusilgner.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
 
-    
+  
 
-    
+  
 
-    
 
-    
+  
 
-    
-  </body>
+  
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
 </html>

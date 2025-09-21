@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>software craftsmanship on Marcus Ilgner</title>
+    <title>Software Craftsmanship on Marcus Ilgner</title>
     <link>https://marcusilgner.com/tags/software-craftsmanship/</link>
-    <description>Recent content in software craftsmanship on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Software Craftsmanship on Marcus Ilgner</description>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 07 Jul 2022 19:56:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/software-craftsmanship/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Jul 2022 19:56:00 +0200</lastBuildDate>
+    <atom:link href="https://marcusilgner.com/tags/software-craftsmanship/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Importance of Clean Code for Agile Teams</title>
       <link>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</link>
       <pubDate>Thu, 07 Jul 2022 19:56:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</guid>
-      <description>The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
-Now the question automatically arises: should we merge it or give it a bit of love and clean it up?</description>
+      <description>&lt;h1 id=&#34;the-importance-of-clean-code-for-agile-teams&#34;&gt;&#xA;  The Importance of Clean Code for Agile Teams&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#the-importance-of-clean-code-for-agile-teams&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Most everyone who works in software development will know the situation&#xA;where you have written some code that manages to somehow solve a current&#xA;problem - but when looking at it the next day (or showing it to another&#xA;person), it turns out that there are a couple of design issues with it.&lt;/p&gt;&#xA;&lt;p&gt;Now the question automatically arises: should we merge it or give it a&#xA;bit of love and clean it up?&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

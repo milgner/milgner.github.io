@@ -4,19 +4,16 @@
     <title>Software Documentation on Marcus Ilgner</title>
     <link>https://marcusilgner.com/series/software-documentation/</link>
     <description>Recent content in Software Documentation on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/series/software-documentation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 20:39:10 +0200</lastBuildDate>
+    <atom:link href="https://marcusilgner.com/series/software-documentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wikis aren&#39;t meant for software documentation</title>
       <link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link>
       <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid>
-      <description>Wikis aren&amp;rsquo;t meant for software documentation &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway
-Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
-If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description>
+      <description>&lt;h1 id=&#34;wikis-arent-meant-for-software-documentation&#34;&gt;&#xA;  Wikis aren&amp;rsquo;t meant for software documentation&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#wikis-arent-meant-for-software-documentation&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo;&#xA;&amp;ndash; &lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Damian_Conway&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Damian Conway&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Although there are many arguments being made to rationalize our laziness and&#xA;avoid writing proper documentation, there is no doubt in my mind that good&#xA;software documentation is a great tool to improve the development lifecycle&#xA;of long-running projects.&lt;/p&gt;&#xA;&lt;p&gt;If you know your project is going to be scrapped in 2 months time, feel free&#xA;to stop reading here and enjoy a good book or a walk outside. &amp;#x2600;&amp;#xfe0f;&#xA;But if it&amp;rsquo;s any more than that, you should make your live and the lives of&#xA;your co-workers easier by documenting your software. Even projects with a&#xA;originally limited lifetime have been known to live long past their best-&#xA;before date.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

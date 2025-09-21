@@ -4,98 +4,79 @@
     <title>Posts on Marcus Ilgner</title>
     <link>https://marcusilgner.com/posts/</link>
     <description>Recent content in Posts on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 21 Feb 2023 17:16:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Sep 2025 12:44:00 +0200</lastBuildDate>
+    <atom:link href="https://marcusilgner.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Domain-Driven Development and GenAI</title>
+      <link>https://marcusilgner.com/posts/2025-09-21-genai-ddd/</link>
+      <pubDate>Sun, 21 Sep 2025 12:44:00 +0200</pubDate>
+      <guid>https://marcusilgner.com/posts/2025-09-21-genai-ddd/</guid>
+      <description>&lt;h1 id=&#34;increased-utility-of-domain-driven-development-in-the-context-of-genai&#34;&gt;&#xA;  Increased utility of Domain-Driven Development in the context of GenAI&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#increased-utility-of-domain-driven-development-in-the-context-of-genai&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;These days it sometimes seems like &amp;ldquo;AI&amp;rdquo; is the only topic being thrown around in software development circles.&#xA;Personally I&amp;rsquo;m mostly ambivalent on the topic but tend to rarely use it: a big - if not the most important - part of software development is asking questions, which is something that LLMs are notoriously bad at. That&amp;rsquo;s largely because their modus operandi and tuning is aimed to produce good-sounding answers instead of questions. So it tends to funnel output into specific directions - something which can easily be exacerbated through imprudent prompts or subliminal tendencies in their training data.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hibernate Initialisation without XML</title>
       <link>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</link>
       <pubDate>Tue, 21 Feb 2023 17:16:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2023-02-21-hibernate-init-without-xml/</guid>
-      <description>Hibernate Initialisation without XML While working on some R&amp;amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a persistence.xml file.
-Ultimately this is probably because many developers implicitly assume that ones JPA persistence unit will ultimately be managed by an application server. But for small containerised applications without application server, having multiple mechanisms to configure the application - i.e. persistence.xml and whatever native mechanism one prefers - is extremely unwieldy.</description>
+      <description>&lt;h1 id=&#34;hibernate-initialisation-without-xml&#34;&gt;&#xA;  Hibernate Initialisation without XML&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hibernate-initialisation-without-xml&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;While working on some R&amp;amp;D last weekend, I was surprised when every introduction to Hibernate started with creating a &lt;code&gt;persistence.xml&lt;/code&gt; file.&lt;/p&gt;&#xA;&lt;p&gt;Ultimately this is probably because many developers implicitly&#xA;assume that ones JPA persistence unit will ultimately be managed&#xA;by an application server. But for small containerised&#xA;applications without application server, having multiple&#xA;mechanisms to configure the application - i.e. &lt;code&gt;persistence.xml&lt;/code&gt;&#xA;and whatever native mechanism one prefers - is extremely unwieldy.&#xA;As an example, I have seen some really convoluted approaches for referencing environment variables to pull in database credentials.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>5 things I learned from 18 months with OPC UA</title>
       <link>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</link>
       <pubDate>Sun, 04 Dec 2022 13:32:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</guid>
-      <description>5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join).</description>
+      <description>&lt;h1 id=&#34;5-things-i-learned-from-18-months-with-opc-ua&#34;&gt;&#xA;  5 Things I learned from 18 months with OPC UA&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#5-things-i-learned-from-18-months-with-opc-ua&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Although it feels like a much longer time, it was in May 2021 that I joined &lt;a href=&#34;https://www.re-digital.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the team at RE:&lt;/a&gt;. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join). Overall it is probably fair to say that software development in this industry works differently from &amp;ldquo;regular&amp;rdquo;, or &amp;ldquo;digital-only&amp;rdquo; software.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>The Importance of Clean Code for Agile Teams</title>
       <link>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</link>
       <pubDate>Thu, 07 Jul 2022 19:56:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/</guid>
-      <description>The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
-Now the question automatically arises: should we merge it or give it a bit of love and clean it up?</description>
+      <description>&lt;h1 id=&#34;the-importance-of-clean-code-for-agile-teams&#34;&gt;&#xA;  The Importance of Clean Code for Agile Teams&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#the-importance-of-clean-code-for-agile-teams&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Most everyone who works in software development will know the situation&#xA;where you have written some code that manages to somehow solve a current&#xA;problem - but when looking at it the next day (or showing it to another&#xA;person), it turns out that there are a couple of design issues with it.&lt;/p&gt;&#xA;&lt;p&gt;Now the question automatically arises: should we merge it or give it a&#xA;bit of love and clean it up?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Becoming a better developer</title>
       <link>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</link>
       <pubDate>Thu, 09 Jun 2022 22:05:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</guid>
-      <description>Programming isn&amp;rsquo;t software development While it might be obvious to many or most people, it nonetheless needs to be said sometimes. But before getting to the interesting part about how to move from programming to software development and how to become better at that, let&amp;rsquo;s start with an example of what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s use a completely ludicrous, over-the-top example 🤪
-Programmer&amp;rsquo;s approach to solving tickets Let&amp;rsquo;s say your team is planning to build a Pomodoro-related app.</description>
+      <description>&lt;h1 id=&#34;programming-isnt-software-development&#34;&gt;&#xA;  Programming isn&amp;rsquo;t software development&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#programming-isnt-software-development&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;While it might be obvious to many or most people, it nonetheless&#xA;needs to be said sometimes. But before getting to the interesting&#xA;part about how to move from programming to software development&#xA;and how to become better at that, let&amp;rsquo;s start with an example of&#xA;what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s&#xA;use a completely ludicrous, over-the-top example 🤪&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Let&#39;s talk about Pet Projects</title>
       <link>https://marcusilgner.com/posts/2022-05-18-pet-projects/</link>
       <pubDate>Wed, 18 May 2022 21:00:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-05-18-pet-projects/</guid>
-      <description>Let&amp;rsquo;s talk about pet projects In many years reviewing job applications from software developers, one topic has come up as surprisingly controversial time and again: pet projects, i.e. projects that developers work on on their own time. So let&amp;rsquo;s have a look and see what the fuzz is all about.
-From the employers perspective First, let&amp;rsquo;s look at it from the employers perspective. A colleague of mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to tile a roof in their free time, would you?</description>
+      <description>&lt;h1 id=&#34;lets-talk-about-pet-projects&#34;&gt;&#xA;  Let&amp;rsquo;s talk about pet projects&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#lets-talk-about-pet-projects&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In many years reviewing job applications from software developers, one&#xA;topic has come up as surprisingly controversial time and again: pet&#xA;projects, i.e. projects that developers work on on their own time.&#xA;So let&amp;rsquo;s have a look and see what the fuzz is all about.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-the-employers-perspective&#34;&gt;&#xA;  From the employers perspective&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#from-the-employers-perspective&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s look at it from the employers perspective. A colleague of&#xA;mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to&#xA;tile a roof in their free time, would you?&amp;rdquo;. And there&amp;rsquo;s a lot of truth&#xA;to that.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Rails Value Objects</title>
       <link>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</link>
       <pubDate>Wed, 04 May 2022 01:06:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-05-04-rails-value-objects/</guid>
-      <description>Value Objects in Rails While writing yesterdays post about the usage of Hash vs class, I couldn&amp;rsquo;t help but think of another powerful tool that helps us to build a well-defined model of our problem domain in the programming language of our choice: the value object.
-To understand the value of value objects (scnr), let&amp;rsquo;s take an example: 42. &amp;ldquo;What is 42?&amp;rdquo;, you might be tempted to ask - and rightfully so.</description>
+      <description>&lt;h1 id=&#34;value-objects-in-rails&#34;&gt;&#xA;  Value Objects in Rails&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#value-objects-in-rails&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;While writing yesterdays post about the usage of &lt;code&gt;Hash&lt;/code&gt; vs &lt;code&gt;class&lt;/code&gt;, I couldn&amp;rsquo;t&#xA;help but think of another powerful tool that helps us to build a well-defined&#xA;model of our problem domain in the programming language of our choice: the&#xA;&lt;em&gt;value object&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;To understand the value of value objects (&lt;em&gt;scnr&lt;/em&gt;), let&amp;rsquo;s take an example:&#xA;&lt;code&gt;42&lt;/code&gt;. &amp;ldquo;What is &lt;code&gt;42&lt;/code&gt;?&amp;rdquo;, you might be tempted to ask - and rightfully so.&#xA;In Ruby it might be an instance of &lt;code&gt;Integer&lt;/code&gt;, other languages may have cause&#xA;to use a more restrictive definition like &lt;code&gt;u8&lt;/code&gt; or &lt;code&gt;i16&lt;/code&gt;. But still - that&#xA;doesn&amp;rsquo;t help us to understand what &lt;code&gt;42&lt;/code&gt; might mean.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Idiomatic Coding: Ruby Hash (&amp; Python Dict)</title>
       <link>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</link>
       <pubDate>Tue, 03 May 2022 08:48:10 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-05-03-idiomatic-coding-ruby-hashes/</guid>
-      <description>Idiomatic Ruby: Hash vs class It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.
-As such, I am often dismayed when reading code from untyped interpreted languages. Sure, there are classes in Javascript, Ruby and Python. But very often I find that they&amp;rsquo;re eschewed in favour of just bundling a list of attributes together in an untyped Object, Hash or Dict respectively.</description>
+      <description>&lt;h1 id=&#34;idiomatic-ruby-hash-vs-class&#34;&gt;&#xA;  Idiomatic Ruby: &lt;code&gt;Hash&lt;/code&gt; vs &lt;code&gt;class&lt;/code&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#idiomatic-ruby-hash-vs-class&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;It is no secret that I&amp;rsquo;m a big fan of typed languages. To me, an expressive type system really helps to convey the mental model of the application to the developers maintaining the code base.&lt;/p&gt;&#xA;&lt;p&gt;As such, I am often dismayed when reading code from untyped interpreted languages. Sure, there are classes in Javascript, Ruby and Python. But very often I find that they&amp;rsquo;re eschewed in favour of just bundling a list of attributes together in an untyped &lt;code&gt;Object&lt;/code&gt;, &lt;code&gt;Hash&lt;/code&gt; or &lt;code&gt;Dict&lt;/code&gt; respectively.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Wikis aren&#39;t meant for software documentation</title>
       <link>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</link>
       <pubDate>Thu, 20 May 2021 20:39:10 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2021-05-20-no-wikis-for-software-documentation/</guid>
-      <description>Wikis aren&amp;rsquo;t meant for software documentation &amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo; &amp;ndash; Damian Conway
-Although there are many arguments being made to rationalize our laziness and avoid writing proper documentation, there is no doubt in my mind that good software documentation is a great tool to improve the development lifecycle of long-running projects.
-If you know your project is going to be scrapped in 2 months time, feel free to stop reading here and enjoy a good book or a walk outside.</description>
+      <description>&lt;h1 id=&#34;wikis-arent-meant-for-software-documentation&#34;&gt;&#xA;  Wikis aren&amp;rsquo;t meant for software documentation&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#wikis-arent-meant-for-software-documentation&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&amp;ldquo;Documentation is a love letter that you write to your future self.&amp;rdquo;&#xA;&amp;ndash; &lt;cite&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Damian_Conway&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Damian Conway&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;Although there are many arguments being made to rationalize our laziness and&#xA;avoid writing proper documentation, there is no doubt in my mind that good&#xA;software documentation is a great tool to improve the development lifecycle&#xA;of long-running projects.&lt;/p&gt;&#xA;&lt;p&gt;If you know your project is going to be scrapped in 2 months time, feel free&#xA;to stop reading here and enjoy a good book or a walk outside. &amp;#x2600;&amp;#xfe0f;&#xA;But if it&amp;rsquo;s any more than that, you should make your live and the lives of&#xA;your co-workers easier by documenting your software. Even projects with a&#xA;originally limited lifetime have been known to live long past their best-&#xA;before date.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Deploy a Vert.x app with an embedded SPA</title>
       <link>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</link>
       <pubDate>Mon, 05 Apr 2021 13:31:04 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2021-04-04-deploy-vertx-with-embedded-spa/</guid>
-      <description>Deploy a Vert.x application with an embedded SPA As a developer I have come to enjoy the versatility and power of the Vert.x platform. And although it contains many utilities for server-side rendering, called Vert.x Web, there are situations where you might want to use a single-page application (SPA) instead.
-Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.</description>
+      <description>&lt;h1 id=&#34;deploy-a-vertx-application-with-an-embedded-spa&#34;&gt;&#xA;  Deploy a Vert.x application with an embedded SPA&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#deploy-a-vertx-application-with-an-embedded-spa&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;As a developer I have come to enjoy the versatility and power of the &lt;a href=&#34;https://vertx.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vert.x&lt;/a&gt; platform. And although it contains many utilities for server-side rendering, called &lt;a href=&#34;https://vertx.io/docs/vertx-web/java/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Vert.x Web&lt;/a&gt;, there are situations where you might want to use a single-page application (SPA) instead.&lt;/p&gt;&#xA;&lt;p&gt;Concrete reasons for and against SPAs are best kept separate from this. One thing, however, that makes SPAs cumbersome for small teams is having to deploy them separately from the API they will talk to, so having a setup that allows for deploying everything in one go.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

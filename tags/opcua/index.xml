@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>opcua on Marcus Ilgner</title>
+    <title>Opcua on Marcus Ilgner</title>
     <link>https://marcusilgner.com/tags/opcua/</link>
-    <description>Recent content in opcua on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Opcua on Marcus Ilgner</description>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 04 Dec 2022 13:32:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/opcua/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Dec 2022 13:32:00 +0200</lastBuildDate>
+    <atom:link href="https://marcusilgner.com/tags/opcua/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 things I learned from 18 months with OPC UA</title>
       <link>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</link>
       <pubDate>Sun, 04 Dec 2022 13:32:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-12-04-5-things-from-18-months-opcua/</guid>
-      <description>5 Things I learned from 18 months with OPC UA Although it feels like a much longer time, it was in May 2021 that I joined the team at RE:. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join).</description>
+      <description>&lt;h1 id=&#34;5-things-i-learned-from-18-months-with-opc-ua&#34;&gt;&#xA;  5 Things I learned from 18 months with OPC UA&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#5-things-i-learned-from-18-months-with-opc-ua&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;Although it feels like a much longer time, it was in May 2021 that I joined &lt;a href=&#34;https://www.re-digital.io/&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the team at RE:&lt;/a&gt;. Now, 18 months later, it feels like a good time for a recap. I&amp;rsquo;ll start with one of the most prominent topics that I encountered: OPC UA. This job is my first within the context of mechanical engineering and while I have worked with many different technologies and built a large variety of systems over the past two decades, this was a novel experience (and also part of the reasons why I decided to join). Overall it is probably fair to say that software development in this industry works differently from &amp;ldquo;regular&amp;rdquo;, or &amp;ldquo;digital-only&amp;rdquo; software.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

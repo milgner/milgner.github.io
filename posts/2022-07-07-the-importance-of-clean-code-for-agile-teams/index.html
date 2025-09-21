@@ -1,109 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
-    <meta name="color-scheme" content="light dark">
-
-    
-
-    <meta name="author" content="Marcus Ilgner">
-    <meta name="description" content="The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
-Now the question automatically arises: should we merge it or give it a bit of love and clean it up?">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Importance of Clean Code for Agile Teams"/>
-<meta name="twitter:description" content="The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
-Now the question automatically arises: should we merge it or give it a bit of love and clean it up?"/>
-
-    <meta property="og:title" content="The Importance of Clean Code for Agile Teams" />
-<meta property="og:description" content="The Importance of Clean Code for Agile Teams Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
-Now the question automatically arises: should we merge it or give it a bit of love and clean it up?" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-07T19:56:00+02:00" />
-<meta property="article:modified_time" content="2022-07-07T19:56:00+02:00" />
-
-
-
-    <title>
+<head>
+  <title>
   The Importance of Clean Code for Agile Teams · Marcus Ilgner
 </title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
 
+
+
+
+<meta name="author" content="Marcus Ilgner">
+<meta name="description" content="
+  The Importance of Clean Code for Agile Teams
+  
     
-      <link rel="canonical" href="https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/">
-    
+    Link to heading
+  
 
-    <link rel="preload" href="https://marcusilgner.com/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+Most everyone who works in software development will know the situation
+where you have written some code that manages to somehow solve a current
+problem - but when looking at it the next day (or showing it to another
+person), it turns out that there are a couple of design issues with it.
+Now the question automatically arises: should we merge it or give it a
+bit of love and clean it up?">
+<meta name="keywords" content="blog,developer,personal">
 
-    
-      
-      
-      <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
-    
 
-    
 
-    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Importance of Clean Code for Agile Teams">
+  <meta name="twitter:description" content="The Importance of Clean Code for Agile Teams Link to heading Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
+Now the question automatically arises: should we merge it or give it a bit of love and clean it up?">
 
-    
+<meta property="og:url" content="https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/">
+  <meta property="og:site_name" content="Marcus Ilgner">
+  <meta property="og:title" content="The Importance of Clean Code for Agile Teams">
+  <meta property="og:description" content="The Importance of Clean Code for Agile Teams Link to heading Most everyone who works in software development will know the situation where you have written some code that manages to somehow solve a current problem - but when looking at it the next day (or showing it to another person), it turns out that there are a couple of design issues with it.
+Now the question automatically arises: should we merge it or give it a bit of love and clean it up?">
+  <meta property="og:locale" content="en_uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-07-07T19:56:00+02:00">
+    <meta property="article:modified_time" content="2022-07-07T19:56:00+02:00">
+    <meta property="article:tag" content="Software Craftsmanship">
 
-    
 
-    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
 
-    <link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
 
-    
-      <script defer src="https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js"
-        integrity="sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b" crossorigin="anonymous"></script>
-    
+<link rel="canonical" href="https://marcusilgner.com/posts/2022-07-07-the-importance-of-clean-code-for-agile-teams/">
 
-    <meta name="generator" content="Hugo 0.109.0">
-  </head>
+
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
 
   
   
-  <body class="preload-transitions colorscheme-light"
-        onload=" twemoji.parse(document.body); "
-  >
-    
+  <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.022594d625780e2edf64581b893d32cb35c11de5d88953ea4ad3c2e45451e214.css" integrity="sha256-AiWU1iV4Di7fZFgbiT0yyzXBHeXYiVPqStPC5FRR4hQ=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://marcusilgner.com/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://marcusilgner.com/site.webmanifest">
+<link rel="mask-icon" href="https://marcusilgner.com/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
 <div class="float-container">
     <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
     </a>
 </div>
 
 
-    <main class="wrapper">
-      <nav class="navigation">
+  <main class="wrapper">
+    <nav class="navigation">
   <section class="container">
+    
     <a class="navigation-title" href="https://marcusilgner.com/">
       Marcus Ilgner
     </a>
     
+    
       <input type="checkbox" id="menu-toggle" />
       <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
       </label>
       <ul class="navigation-list">
         
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/posts/">Blog</a>
+              <a class="navigation-link " href="https://marcusilgner.com/posts/">Blog</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/projects/">Projects</a>
+              <a class="navigation-link " href="https://marcusilgner.com/projects/">Projects</a>
             </li>
           
             <li class="navigation-item">
-              <a class="navigation-link" href="https://marcusilgner.com/about/">About</a>
+              <a class="navigation-link " href="https://marcusilgner.com/about/">About</a>
             </li>
           
         
@@ -114,8 +142,8 @@ Now the question automatically arises: should we merge it or give it a bit of lo
 </nav>
 
 
-      <div class="content">
-        
+    <div class="content">
+      
   <section class="container post">
     <article>
       <header>
@@ -129,35 +157,34 @@ Now the question automatically arises: should we merge it or give it a bit of lo
         <div class="post-meta">
           <div class="date">
             <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime='2022-07-07T19:56:00&#43;02:00'>
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-07-07T19:56:00&#43;02:00">
                 July 7, 2022
               </time>
             </span>
             <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
               3-minute read
             </span>
           </div>
-          <div class="authors">
-    <i class="fa fa-user" aria-hidden="true"></i>
-      <a href="https://marcusilgner.com/authors/marcus-ilgner-mail@marcusilgner.com/">Marcus Ilgner &lt;mail@marcusilgner.com&gt;</a></div>
+          
           
           <div class="tags">
-  <i class="fa fa-tag" aria-hidden="true"></i>
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
     <span class="tag">
-      <a href="https://marcusilgner.com/tags/software-craftsmanship/">software craftsmanship</a>
+      <a href="https://marcusilgner.com/tags/software-craftsmanship/">Software Craftsmanship</a>
     </span></div>
 
         </div>
       </header>
 
-      <div>
+      <div class="post-content">
         
         <h1 id="the-importance-of-clean-code-for-agile-teams">
   The Importance of Clean Code for Agile Teams
   <a class="heading-link" href="#the-importance-of-clean-code-for-agile-teams">
-    <i class="fa fa-link" aria-hidden="true"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
   </a>
 </h1>
 <p>Most everyone who works in software development will know the situation
@@ -172,18 +199,19 @@ requirements of an agile environment.</p>
 <h2 id="requirements-change-well-crafted-code-can-change">
   Requirements change; well-crafted code can change
   <a class="heading-link" href="#requirements-change-well-crafted-code-can-change">
-    <i class="fa fa-link" aria-hidden="true"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <p>In agile software development, we have learned to acknowledge the fact that
 requirements change. And if it were possible to anticipate these changes,
 then probably they&rsquo;d be there already. So, do yourselves a favour and
-<a href="https://medium.com/swlh/stop-predicting-the-future-of-your-code-e0d403116f90">stop predecting the future of your code</a>.
+<a href="https://medium.com/swlh/stop-predicting-the-future-of-your-code-e0d403116f90"  class="external-link" target="_blank" rel="noopener">stop predecting the future of your code</a>.
 If it were possible to build workable abstractions that will last the
 lifetime of the application at the start of the project&hellip; well, it&rsquo;s
 possible there wouldn&rsquo;t have been a cause to write the Manifesto for Agile
 Software Development in the first place.</p>
-<p>TIL that Robert C. Martin apparently proposed to add a fifth value to it: <a href="https://medium.com/tacta/software-craftmanship-writing-code-for-the-future-a2caf87312e5">&ldquo;Craftsmanship over Execution&rdquo;</a>.</p>
+<p>TIL that Robert C. Martin apparently proposed to add a fifth value to it: <a href="https://medium.com/tacta/software-craftmanship-writing-code-for-the-future-a2caf87312e5"  class="external-link" target="_blank" rel="noopener">&ldquo;Craftsmanship over Execution&rdquo;</a>.</p>
 <p>It is my interpretation that this is because well-crafted code constitutes a
 collection of composable pieces that enable you to react to changes. You can
 easily re-arrange and adapt them to suit new requirements and build new features
@@ -194,29 +222,31 @@ you open a file in your code base.</p>
 <h2 id="maybe-an-issue-with-oop">
   Maybe an issue with OOP?
   <a class="heading-link" href="#maybe-an-issue-with-oop">
-    <i class="fa fa-link" aria-hidden="true"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <p>It is my hypothesis, that a large part of this problem is due to the
-built-in <a href="https://medium.com/codemonday/banana-gorilla-jungle-oop-5052b2e4d588">Gorilla-Banana-problem</a>
+built-in <a href="https://medium.com/codemonday/banana-gorilla-jungle-oop-5052b2e4d588"  class="external-link" target="_blank" rel="noopener">Gorilla-Banana-problem</a>
 of object-oriented programming languages. But unfortunately I don&rsquo;t have
 enough experience working with larger production-grade applications written
 in a functional style to confirm this suspicion.</p>
 <h2 id="its-a-process">
   It&rsquo;s a process
   <a class="heading-link" href="#its-a-process">
-    <i class="fa fa-link" aria-hidden="true"></i>
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <p>The craft of software development is a complex one and there never comes a
 point where one wakes up one morning and suddenly finds that they know all
 there is to know about it.</p>
-<p>That is why the <a href="http://manifesto.softwarecraftsmanship.org/">Manifesto for Software Craftsmanship</a>,
+<p>That is why the <a href="http://manifesto.softwarecraftsmanship.org/"  class="external-link" target="_blank" rel="noopener">Manifesto for Software Craftsmanship</a>,
 picking up on the Agile Manifesto and extrapolating on it,
 mentions the <em>community of professionals</em>: software development is such
 a broad topic, that everyone has something to learn and we should strive to,
 continuously, both teach and to learn from another.</p>
-<p>So, let&rsquo;s everyone do their best and <a href="https://medium.com/@learnstuff.io/broken-window-theory-in-software-development-bef627a1ce99">avoid breaking windows</a>
+<p>So, let&rsquo;s everyone do their best and <a href="https://medium.com/@learnstuff.io/broken-window-theory-in-software-development-bef627a1ce99"  class="external-link" target="_blank" rel="noopener">avoid breaking windows</a>
 during stressful phases.</p>
 
       </div>
@@ -229,61 +259,79 @@ during stressful phases.</p>
         
         
         
+        
+        
+        
+        
       </footer>
     </article>
 
     
   </section>
 
-      </div>
+    </div>
 
-      
-  <footer class="footer">
-    <section class="container">
-      
-      
-        ©
-        
-          2018 -
-        
-        2023
-         Marcus Ilgner 
-      
-      
-         · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
-      
-      
-    </section>
-  </footer>
-
-
-    </main>
-
+    <footer class="footer">
+  <section class="container">
+    ©
     
-      
-      <script src="https://marcusilgner.com/js/coder.min.978ac2219b08e24e68c3f3eada8d99add50d9d997ce3861354b602cc94f75f30.js" integrity="sha256-l4rCIZsI4k5ow/Pq2o2ZrdUNnZl844YTVLYCzJT3XzA="></script>
+      2018 -
     
+    2025
+     Marcus Ilgner 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
 
-    
-      <script src="https://marcusilgner.com/scripts/mermaid.min.js"></script>
-    
-      <script src="https://marcusilgner.com/scripts/init.js"></script>
-    
+  </main>
 
-    
+  
 
-    
+  
+  
+  <script src="https://marcusilgner.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
 
-    
+  
 
-    
+  
 
-    
 
-    
+  
 
-    
-  </body>
+  
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
 </html>

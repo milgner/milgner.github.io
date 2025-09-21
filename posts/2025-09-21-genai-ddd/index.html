@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  Domain-Driven Development and GenAI · Marcus Ilgner
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Marcus Ilgner">
+<meta name="description" content="
+  Increased utility of Domain-Driven Development in the context of GenAI
+  
+    
+    Link to heading
+  
+
+These days it sometimes seems like &ldquo;AI&rdquo; is the only topic being thrown around in software development circles.
+Personally I&rsquo;m mostly ambivalent on the topic but tend to rarely use it: a big - if not the most important - part of software development is asking questions, which is something that LLMs are notoriously bad at. That&rsquo;s largely because their modus operandi and tuning is aimed to produce good-sounding answers instead of questions. So it tends to funnel output into specific directions - something which can easily be exacerbated through imprudent prompts or subliminal tendencies in their training data.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Domain-Driven Development and GenAI">
+  <meta name="twitter:description" content="Increased utility of Domain-Driven Development in the context of GenAI Link to heading These days it sometimes seems like “AI” is the only topic being thrown around in software development circles. Personally I’m mostly ambivalent on the topic but tend to rarely use it: a big - if not the most important - part of software development is asking questions, which is something that LLMs are notoriously bad at. That’s largely because their modus operandi and tuning is aimed to produce good-sounding answers instead of questions. So it tends to funnel output into specific directions - something which can easily be exacerbated through imprudent prompts or subliminal tendencies in their training data.">
+
+<meta property="og:url" content="https://marcusilgner.com/posts/2025-09-21-genai-ddd/">
+  <meta property="og:site_name" content="Marcus Ilgner">
+  <meta property="og:title" content="Domain-Driven Development and GenAI">
+  <meta property="og:description" content="Increased utility of Domain-Driven Development in the context of GenAI Link to heading These days it sometimes seems like “AI” is the only topic being thrown around in software development circles. Personally I’m mostly ambivalent on the topic but tend to rarely use it: a big - if not the most important - part of software development is asking questions, which is something that LLMs are notoriously bad at. That’s largely because their modus operandi and tuning is aimed to produce good-sounding answers instead of questions. So it tends to funnel output into specific directions - something which can easily be exacerbated through imprudent prompts or subliminal tendencies in their training data.">
+  <meta property="og:locale" content="en_uk">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-21T12:44:00+02:00">
+    <meta property="article:modified_time" content="2025-09-21T12:44:00+02:00">
+    <meta property="article:tag" content="DDD">
+    <meta property="article:tag" content="GenAI">
+
+
+
+
+<link rel="canonical" href="https://marcusilgner.com/posts/2025-09-21-genai-ddd/">
+
+
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://marcusilgner.com/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="https://marcusilgner.com/css/coder.min.022594d625780e2edf64581b893d32cb35c11de5d88953ea4ad3c2e45451e214.css" integrity="sha256-AiWU1iV4Di7fZFgbiT0yyzXBHeXYiVPqStPC5FRR4hQ=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="https://marcusilgner.com/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://marcusilgner.com/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="https://marcusilgner.com/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://marcusilgner.com/images/apple-touch-icon.png">
+
+<link rel="manifest" href="https://marcusilgner.com/site.webmanifest">
+<link rel="mask-icon" href="https://marcusilgner.com/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://marcusilgner.com/">
+      Marcus Ilgner
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://marcusilgner.com/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://marcusilgner.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="https://marcusilgner.com/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://marcusilgner.com/posts/2025-09-21-genai-ddd/">
+              Domain-Driven Development and GenAI
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-09-21T12:44:00&#43;02:00">
+                September 21, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/ddd/">DDD</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://marcusilgner.com/tags/genai/">GenAI</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="increased-utility-of-domain-driven-development-in-the-context-of-genai">
+  Increased utility of Domain-Driven Development in the context of GenAI
+  <a class="heading-link" href="#increased-utility-of-domain-driven-development-in-the-context-of-genai">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>These days it sometimes seems like &ldquo;AI&rdquo; is the only topic being thrown around in software development circles.
+Personally I&rsquo;m mostly ambivalent on the topic but tend to rarely use it: a big - if not the most important - part of software development is asking questions, which is something that LLMs are notoriously bad at. That&rsquo;s largely because their modus operandi and tuning is aimed to produce good-sounding answers instead of questions. So it tends to funnel output into specific directions - something which can easily be exacerbated through imprudent prompts or subliminal tendencies in their training data.</p>
+<p>Secondly, when it comes to actually writing code, I find that their output is generally sub-par and I find myself spending more time refining prompts or cleaning up generated code than if I had just done the implementation myself. Which is an anecdotal datapoint - but <a href="https://arxiv.org/abs/2507.09089"  class="external-link" target="_blank" rel="noopener">is also supported by current research</a>.</p>
+<p>But there&rsquo;s no question that it&rsquo;s a tool that we need to factor into our work and our development processes. For myself, I have decided that the following two aspects are most important for the work I do:</p>
+<h2 id="1-go-slow">
+  1. Go Slow
+  <a class="heading-link" href="#1-go-slow">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>While everyone talks about using GenAI to crank out more code more quickly, LLMs are also tools that allow you to make more mistakes faster. By easily following LLM recommendations and generating code all day, one can quickly build up technical debt and evolve code bases that no developer (or automated system) understands anymore.</p>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content">And since everyone has access to these tools, it means that we need to focus even more on building the <em>right</em> thing.</div>
+</div>
+
+<p>Thus, we should not let ourselves be hurried into quickly making the wrong decisions but instead keep asking a few more questions and consider potential biases and fallacies. And, as they say in the US Navy Seals, &ldquo;Slow is smooth, smooth is fast&rdquo;.</p>
+<h2 id="2-consistently-use-domain-driven-development">
+  2. Consistently use Domain-Driven-Development
+  <a class="heading-link" href="#2-consistently-use-domain-driven-development">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>LLMs, as the name implies, operate on language. Therefore it is even more important to establish a consistent, ubiquitous domain language in our projects.</p>
+<p>As all the methods promoted by DDD are meant to make complex domains more accessible to humans, the same methods are useful for making it more accessible to LLMs, too. So while the original benefit of DDD was to enable better collaboration between software developers and domain experts, we can now throw another partner into the mix: using a distinct terminology throughout the codebase facilitates its comprehension not only for humans, but for software systems, too.</p>
+<p>Furthermore, using business process terminology in your API will also clarify intent. In my opinion, the fact that LLMs are nowadays used both for building server and client applications should be good motivation to get rid of CRUD-style HTTP APIs in favour of more domain-oriented ones, too.</p>
+<p>Of course, any software architectural pattern should be tied to the degree of complexity and requirements inherent in its domain. And code should be clear about its intent. So when talking about developing non-trivial software, I&rsquo;m positive that the patterns promoted by DDD will yield even more benefit as the utility of GenAI tools increases.</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2018 -
+    
+    2025
+     Marcus Ilgner 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="https://marcusilgner.com/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

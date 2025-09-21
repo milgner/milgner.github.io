@@ -4,7 +4,8 @@
     <title>Categories on Marcus Ilgner</title>
     <link>https://marcusilgner.com/categories/</link>
     <description>Recent content in Categories on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-uk</language><atom:link href="https://marcusilgner.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en-uk</language>
+    <atom:link href="https://marcusilgner.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

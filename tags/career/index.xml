@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>career on Marcus Ilgner</title>
+    <title>Career on Marcus Ilgner</title>
     <link>https://marcusilgner.com/tags/career/</link>
-    <description>Recent content in career on Marcus Ilgner</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Career on Marcus Ilgner</description>
+    <generator>Hugo</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 09 Jun 2022 22:05:00 +0200</lastBuildDate><atom:link href="https://marcusilgner.com/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 22:05:00 +0200</lastBuildDate>
+    <atom:link href="https://marcusilgner.com/tags/career/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Becoming a better developer</title>
       <link>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</link>
       <pubDate>Thu, 09 Jun 2022 22:05:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-06-09-becoming-a-better-developer/</guid>
-      <description>Programming isn&amp;rsquo;t software development While it might be obvious to many or most people, it nonetheless needs to be said sometimes. But before getting to the interesting part about how to move from programming to software development and how to become better at that, let&amp;rsquo;s start with an example of what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s use a completely ludicrous, over-the-top example 🤪
-Programmer&amp;rsquo;s approach to solving tickets Let&amp;rsquo;s say your team is planning to build a Pomodoro-related app.</description>
+      <description>&lt;h1 id=&#34;programming-isnt-software-development&#34;&gt;&#xA;  Programming isn&amp;rsquo;t software development&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#programming-isnt-software-development&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;While it might be obvious to many or most people, it nonetheless&#xA;needs to be said sometimes. But before getting to the interesting&#xA;part about how to move from programming to software development&#xA;and how to become better at that, let&amp;rsquo;s start with an example of&#xA;what I&amp;rsquo;m talking about. To illustrate the underlying concept, let&amp;rsquo;s&#xA;use a completely ludicrous, over-the-top example 🤪&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Let&#39;s talk about Pet Projects</title>
       <link>https://marcusilgner.com/posts/2022-05-18-pet-projects/</link>
       <pubDate>Wed, 18 May 2022 21:00:00 +0200</pubDate>
-      
       <guid>https://marcusilgner.com/posts/2022-05-18-pet-projects/</guid>
-      <description>Let&amp;rsquo;s talk about pet projects In many years reviewing job applications from software developers, one topic has come up as surprisingly controversial time and again: pet projects, i.e. projects that developers work on on their own time. So let&amp;rsquo;s have a look and see what the fuzz is all about.
-From the employers perspective First, let&amp;rsquo;s look at it from the employers perspective. A colleague of mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to tile a roof in their free time, would you?</description>
+      <description>&lt;h1 id=&#34;lets-talk-about-pet-projects&#34;&gt;&#xA;  Let&amp;rsquo;s talk about pet projects&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#lets-talk-about-pet-projects&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;In many years reviewing job applications from software developers, one&#xA;topic has come up as surprisingly controversial time and again: pet&#xA;projects, i.e. projects that developers work on on their own time.&#xA;So let&amp;rsquo;s have a look and see what the fuzz is all about.&lt;/p&gt;&#xA;&lt;h2 id=&#34;from-the-employers-perspective&#34;&gt;&#xA;  From the employers perspective&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#from-the-employers-perspective&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;First, let&amp;rsquo;s look at it from the employers perspective. A colleague of&#xA;mine once succinctly put it like this: &amp;ldquo;You wouldn&amp;rsquo;t expect a slater to&#xA;tile a roof in their free time, would you?&amp;rdquo;. And there&amp;rsquo;s a lot of truth&#xA;to that.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
