@@ -29,6 +29,9 @@ canonifyurls = true
   dateformat = "January 2, 2006"
   since = "2018"
 
+[markup.goldmark]
+[markup.goldmark.renderer]
+    unsafe = true
 
   # Custom CSS
   # customCSS = ["custom.css"]
